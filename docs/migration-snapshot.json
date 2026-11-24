@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-24",
+  "source": "0w1Max/0w1Max",
+  "source_release": "v2.7.0",
+  "branches": [
+    {
+      "name": "feature/commando-activity-svg-v1",
+      "sha": "98557ae3c73eeddc7fb3f8678f9b2f901e6c386d",
+      "protected": false
+    },
+    {
+      "name": "feature/factory-v8-assets",
+      "sha": "dc6b6c65e5cfee6913a57e351357bde313dc656e",
+      "protected": false
+    },
+    {
+      "name": "feature/location-kits-v1",
+      "sha": "4a49b871fb219a46397a8ba671a2497338553b39",
+      "protected": false
+    },
+    {
+      "name": "feature/profile-english-game-hud",
+      "sha": "193008a57dbcbe26a6f607dbfe641558a5795251",
+      "protected": false
+    },
+    {
+      "name": "feature/profile-rotation-v2-6-0",
+      "sha": "e235535aca0afc41bef5a597db9def1c4e2de37d",
+      "protected": false
+    },
+    {
+      "name": "feature/storm-coast-profile-release",
+      "sha": "14d7078b3d66f8b819b27f2f62a8d78cd3207e48",
+      "protected": false
+    },
+    {
+      "name": "main",
+      "sha": "4a49b871fb219a46397a8ba671a2497338553b39",
+      "protected": false
+    },
+    {
+      "name": "output",
+      "sha": "a7b3af13bbf62b9ecdd09196f1d655a6b1d247e1",
+      "protected": false
+    }
+  ]
+}

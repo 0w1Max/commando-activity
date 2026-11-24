@@ -1,0 +1,65 @@
+name: Commando Activity reusable publisher
+on:
+  workflow_call:
+    secrets:
+      read_user_token:
+        description: Owner classic PAT with read:user
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: commando-activity-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Load pinned generator
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: 0w1Max/commando-activity
+          ref: v2.8.0
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Прочитать последнее опубликованное состояние
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const fs=require('fs');
+            const {pathToFileURL}=require('url');
+            const {readOutput}=await import(pathToFileURL(process.cwd()+'/scripts/output-store.mjs'));
+            const {owner,repo}=context.repo;
+            const saved=await readOutput({github,owner,repo});
+            fs.mkdirSync('generated',{recursive:true});
+            fs.writeFileSync('generated/previous-state.json',JSON.stringify(saved.previous));
+            fs.writeFileSync('generated/previous-ref.json',JSON.stringify({sha:saved.snapshot}));
+
+      - name: Сгенерировать сегодняшнюю локацию и свежий календарь GitHub
+        env:
+          GH_TOKEN: ${{ secrets.read_user_token }}
+          GITHUB_USER: ${{ github.repository_owner }}
+        run: node scripts/publish-daily.mjs --previous-state generated/previous-state.json
+
+      - name: Проверить SVG и состояние перед публикацией
+        run: node scripts/validate-daily.mjs generated/commando-activity.svg generated/commando-state.json
+
+      - name: Атомарно опубликовать SVG и состояние в output
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const fs=require('fs');
+            const {pathToFileURL}=require('url');
+            const {publishOutput}=await import(pathToFileURL(process.cwd()+'/scripts/output-store.mjs'));
+            const {owner,repo}=context.repo;
+            if(context.ref!==`refs/heads/${context.payload.repository.default_branch}`)throw new Error('Unexpected publication branch');
+            const snapshot=JSON.parse(fs.readFileSync('generated/previous-ref.json','utf8')).sha;
+            const state=JSON.parse(fs.readFileSync('generated/commando-state.json','utf8'));
+            const result=await publishOutput({github,owner,repo,snapshot,sourceSha:context.sha,
+              svg:fs.readFileSync('generated/commando-activity.svg','utf8'),state});
+            core.info(`Published v${state.version}: ${state.date} ${state.location}; ${result.sha}`);
+

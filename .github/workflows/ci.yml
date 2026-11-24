@@ -1,0 +1,43 @@
+name: Test and release
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: npm run demo
+      - run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('generated/commando-activity.svg')"
+  release:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
+        with:
+          script: |
+            const fs=require('fs'),{owner,repo}=context.repo;
+            const version=JSON.parse(fs.readFileSync('package.json','utf8')).version;
+            if(!/^\d+\.\d+\.\d+$/.test(version))throw Error('Invalid version');
+            const tag=`v${version}`;
+            try{await github.rest.git.getRef({owner,repo,ref:`tags/${tag}`});}
+            catch(e){if(e.status!==404)throw e;await github.rest.git.createRef({owner,repo,ref:`refs/tags/${tag}`,sha:context.sha});}
+            try{await github.rest.repos.getReleaseByTag({owner,repo,tag});}
+            catch(e){if(e.status!==404)throw e;await github.rest.repos.createRelease({owner,repo,tag_name:tag,name:`Commando Activity ${tag}`,body:'Standalone profile animation. English: README.md. Русский: README.ru.md. Code/art rights: ASSET_RIGHTS.md.',draft:false,prerelease:false});}

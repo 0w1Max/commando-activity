@@ -1,0 +1,12 @@
+name: Commando Activity
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 21,9 * * *'
+permissions:
+  contents: write
+jobs:
+  game:
+    uses: 0w1Max/commando-activity/.github/workflows/generate.yml@v2.8.0
+    secrets:
+      read_user_token: ${{ secrets.COMMANDO_READ_USER_TOKEN }}
