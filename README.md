@@ -38,3 +38,7 @@ Node.js 22+: `npm test` and `npm run demo`. No runtime dependencies. This is an 
 [Development](docs/en/DEVELOPMENT.md) · [Migration record](docs/en/MIGRATION.md) · [Contributing](CONTRIBUTING.md) · [Changes](CHANGELOG.md)
 
 Original code has an MIT license with an explicit scope. Some legacy artwork has incomplete provenance and is **not** covered by that grant: read [ASSET_RIGHTS.md](ASSET_RIGHTS.md) before redistributing artwork. This is an independent project, not an official Contra/Konami product.
+
+## Acknowledgements
+
+Commando Activity was inspired by [pacman-contribution-graph](https://github.com/abozanona/pacman-contribution-graph) and its idea of turning the GitHub contribution calendar into a game animation.
