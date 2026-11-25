@@ -38,3 +38,7 @@ Workflow получает календарь, проверяет результ�
 [Разработка](docs/ru/DEVELOPMENT.md) · [Перенос из профиля](docs/ru/MIGRATION.md) · [Вклад в проект](CONTRIBUTING.md) · [Изменения](CHANGELOG.md)
 
 Оригинальный код имеет MIT-лицензию с явно заданной областью. Права на часть старой графики не подтверждены и не входят в эту лицензию: перед распространением ресурсов прочитайте [ASSET_RIGHTS.md](ASSET_RIGHTS.md). Проект не является официальным продуктом Contra/Konami.
+
+## Благодарности
+
+На создание Commando Activity вдохновил проект [pacman-contribution-graph](https://github.com/abozanona/pacman-contribution-graph) — идея превращения календаря активности GitHub в игровую анимацию.
