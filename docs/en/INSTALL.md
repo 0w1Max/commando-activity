@@ -47,6 +47,6 @@ Replace both occurrences of `YOUR_LOGIN`. Open the image URL first, then the pro
 
 To upgrade, review a new release and change the version suffix in your caller workflow. Existing tags are never moved by the release workflow. To uninstall, remove your caller workflow and README image; the output history can remain. This release documents personal accounts and classic PATs. Organization profiles and fine-grained PATs are not certified by these tests.
 
-Technical installation does not establish permission to redistribute all legacy artwork. See [asset rights](../../ASSET_RIGHTS.md).
+The owner confirms original artwork creation; its separate public reuse license is pending. See [asset rights](../../ASSET_RIGHTS.md).
 
 [Reference](REFERENCE.md) · [Troubleshooting](TROUBLESHOOTING.md)

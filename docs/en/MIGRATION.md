@@ -1,6 +1,8 @@
 # Repository audit and migration
 
-**English** · [Русский](../ru/MIGRATION.md) · 2026-11-24
+**English** · [Русский](../ru/MIGRATION.md)
+
+**Follow-up, 27 November 2026:** the owner confirms original creation of all artwork. See the [current artwork record](ARTWORK.md) and [repository settings](REPOSITORY_SECURITY.md); the findings below describe the earlier review state. · 2026-11-24
 
 ## Findings
 
