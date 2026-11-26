@@ -16,6 +16,17 @@ test('Inventory covers every packed atlas and distinguishes provenance from righ
     /need rights review/,
   );
 });
+test('Owner-declared origin does not silently assign a public artwork license', () => {
+  const changed = inventory();
+  assert.equal(changed.ownerDeclaration.declaredBy, '0w1Max');
+  assert.ok(
+    changed.assets.every(
+      (item) => item.rightsStatus === 'license-pending' && item.license === null,
+    ),
+  );
+  delete changed.ownerDeclaration;
+  assert.throws(() => validateArtworkManifest(changed, context), /Missing owner declaration/);
+});
 test('Untracked, changed or renamed artwork cannot silently pass inventory checks', () => {
   assert.throws(
     () =>

@@ -2,21 +2,27 @@
 
 **English** · [Русский](../ru/ARTWORK.md)
 
+## Owner clarification — 27 November 2026
+
+The project owner confirms that the character, backgrounds and other artwork were created from scratch in collaboration with the assistant. The inventory records this as an **owner statement of original creation**, not an external license or an independent legal certification. The current task is therefore to document that origin and choose an explicit public artwork license; there is no established reason to replace the graphics simply because earlier creation records were incomplete. The code's MIT scope still excludes artwork. Exact generation-tool metadata is not reconstructed from filenames.
+
+All 19 atlas records now have `license-pending` status. The evidence table below describes recovered technical records; its review status concerns final licensing, not a finding of third-party copying.
+
 ## Current result — 27 November 2026
 
 The [inventory](../../compliance/artwork-manifest.json) covers **19 packed atlas files**: 11 source atlases and 8 optimized derivatives. Seven archived PNGs and two historical compilers have immutable repository links, Git blob IDs and SHA-256 hashes. This establishes technical provenance, not ownership or permission to redistribute.
 
-| Group                                           | Evidence recovered                                                                                                       | Rights status                    |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
-| Factory V8 terrain                              | Two archived PNGs; full compilation followed by `--small` reproduces the current atlas byte for byte                     | Review required                  |
-| Canyon, temple and coast terrain kits           | Three concept PNGs plus the shared revision PNG; the archived compiler reproduces all three atlases byte for byte        | Review required                  |
-| Canyon background                               | Archived background PNG exists; the original background-to-atlas conversion has not been reproduced                      | Review required                  |
-| Soldier and other location/experimental atlases | Existing atlas bytes preserved in the historical repository and v2.8.2; no complete upstream creation record established | Review required                  |
-| Eight optimized atlases                         | Derived from the corresponding source atlas by the exact vector compiler; existing `check:art` verifies the conversion   | Inherit unresolved source rights |
+| Group                                           | Evidence recovered                                                                                                       | Rights status                                  |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Factory V8 terrain                              | Two archived PNGs; full compilation followed by `--small` reproduces the current atlas byte for byte                     | Public license pending                         |
+| Canyon, temple and coast terrain kits           | Three concept PNGs plus the shared revision PNG; the archived compiler reproduces all three atlases byte for byte        | Public license pending                         |
+| Canyon background                               | Archived background PNG exists; the original background-to-atlas conversion has not been reproduced                      | Public license pending                         |
+| Soldier and other location/experimental atlases | Existing atlas bytes preserved in the historical repository and v2.8.2; no complete upstream creation record established | Public license pending                         |
+| Eight optimized atlases                         | Derived from the corresponding source atlas by the exact vector compiler; existing `check:art` verifies the conversion   | Public license pending; follows source artwork |
 
 The historical snapshot is [0w1Max/0w1Max at bf8f103](https://github.com/0w1Max/0w1Max/tree/bf8f10350b0c82fa2e651b318b8b83298d821a36). PNGs are linked there rather than duplicated into the product. Local copies matched the archived Git blob IDs. Source PNG reproduction was checked with Python/Pillow during this review; the historical compiler is not installed as a new runtime dependency.
 
-Filenames, a generated-images directory and compiler comments do **not** establish which image service was used, which references were supplied or what rights apply. Unknown creator, generator and license fields stay empty. There is no finding here that an asset was stolen, and no claim that every asset is cleared.
+Filenames, a generated-images directory and compiler comments do **not** establish which image service was used, which references were supplied or what rights apply. The owner declaration above supplies the creation account; exact creator/tool metadata and the public license are not invented. There is no finding here that an asset was stolen, and no claim that every asset is cleared.
 
 ## Resolve each source
 
@@ -31,7 +37,7 @@ For new external artwork, prefer clear CC0 or CC BY 4.0 terms. This is an acquis
 ## Automated checks
 
 - `npm run check:assets` checks coverage, hashes, evidence references and derivation consistency. It currently succeeds with an explicit unresolved-rights warning.
-- `npm run check:assets:cleared` additionally requires all records to be verified. **It currently fails intentionally** because the rights review is incomplete.
+- `npm run check:assets:cleared` additionally requires all records to be verified. **It currently fails intentionally** because no public artwork license has yet been assigned.
 - `npm run check:art` reproduces all eight optimized vector atlases from the bundled sources.
 - Neither an inventory checker nor REUSE/SPDX proves that permission is genuine or legally sufficient. Review remains necessary.
 

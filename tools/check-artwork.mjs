@@ -29,7 +29,7 @@ export function validateArtworkManifest(manifest, { files, read, requireCleared 
       .update(bytes)
       .digest('hex');
     assert.equal(blob, item.gitBlobSha, 'Git blob mismatch: ' + item.path);
-    assert.ok(['review-required', 'verified'].includes(item.rightsStatus));
+    assert.ok(['review-required', 'license-pending', 'verified'].includes(item.rightsStatus));
     assert.ok(Array.isArray(item.permissionEvidence));
     if (item.rightsStatus === 'verified') {
       assert.ok(typeof item.license === 'string' && item.license.trim(), 'Missing license');
@@ -38,6 +38,14 @@ export function validateArtworkManifest(manifest, { files, read, requireCleared 
       for (const url of item.permissionEvidence)
         assert.match(url, /^https:\/\//, 'Evidence must be a reviewable HTTPS reference');
     } else {
+      if (item.rightsStatus === 'license-pending') {
+        assert.equal(
+          item.originDeclaration,
+          manifest.ownerDeclaration?.id,
+          'Missing owner declaration',
+        );
+        assert.ok(manifest.ownerDeclaration?.statement, 'Empty owner declaration');
+      }
       assert.equal(item.license, null, 'Do not assign a license to unresolved artwork');
       unresolved.push(item.path);
     }

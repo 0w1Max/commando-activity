@@ -25,7 +25,7 @@ Enter your GitHub login. The assistant prepares your workflow and README snippet
 
 No fork, npm installation or game source files in your profile repository. Your existing portfolio stays in place. Installation requires write access to your public `LOGIN/LOGIN` repository and permission to run GitHub Actions.
 
-**Artwork notice:** original code is licensed under [MIT](LICENSE-CODE). Rights to some legacy artwork have not been established; that artwork is excluded from the code license. Read [Code and asset rights](ASSET_RIGHTS.md) before redistributing or adapting the graphics.
+**Artwork notice:** original code is licensed under [MIT](LICENSE-CODE). The owner confirms that the artwork was created from scratch with the assistant; its separate public license is pending and it is excluded from the code license. Read [Code and asset rights](ASSET_RIGHTS.md) before redistributing or adapting the graphics.
 
 ## Find your way
 

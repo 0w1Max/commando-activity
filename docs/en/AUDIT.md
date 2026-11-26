@@ -2,6 +2,8 @@
 
 **English** · [Русский](../ru/AUDIT.md)
 
+**Follow-up, 27 November 2026:** the owner confirms original creation of all artwork. See the [current artwork record](ARTWORK.md) and [repository settings](REPOSITORY_SECURITY.md); the findings below describe the earlier review state.
+
 Scope: source modules, CLI, workflow security, input/output contracts, setup assistant, documentation, tests, release metadata and dependency configuration. Baseline: stable **2.8.1**, commit `f68e1b35f94a12deffe8205945d90dfbd69657b7`. Remediation: **2.8.2**. This is a source review and regression audit, not a formal penetration test, independent certification or proof of absence of defects.
 
 ## Assessment

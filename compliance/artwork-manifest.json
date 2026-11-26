@@ -13,7 +13,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "desert-canyon-background",
@@ -24,7 +25,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "desert-kit-source",
@@ -35,7 +37,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "factory-v8-small-source",
@@ -46,7 +49,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "factory-v8-source",
@@ -57,7 +61,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "location-kit-revision-2-source",
@@ -68,7 +73,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "temple-kit-source",
@@ -79,7 +85,8 @@
       "creator": null,
       "generator": null,
       "license": null,
-      "rightsStatus": "review-required"
+      "rightsStatus": "license-pending",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "id": "compile-factory-concept",
@@ -110,7 +117,7 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -120,7 +127,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/coast-kit-sprites.json.gz.b64",
@@ -135,7 +143,7 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -145,7 +153,8 @@
         "transformation": "compile-location-kits.py",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/coast-optimized.json.gz.b64",
@@ -165,7 +174,7 @@
         "stone-shelf",
         "timber-span"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -175,7 +184,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/coast-sprites.json.gz.b64",
@@ -195,7 +205,7 @@
         "stone-shelf",
         "timber-span"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -205,7 +215,8 @@
         "transformation": null,
         "reproduced": false
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/desert-kit-optimized.json.gz.b64",
@@ -220,7 +231,7 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -230,7 +241,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/desert-kit-sprites.json.gz.b64",
@@ -245,7 +257,7 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -255,7 +267,8 @@
         "transformation": "compile-location-kits.py",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/desert-optimized.json.gz.b64",
@@ -281,7 +294,7 @@
         "sandstone-shelf",
         "west-mesa"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -291,7 +304,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/desert-sprites.json.gz.b64",
@@ -317,7 +331,7 @@
         "sandstone-shelf",
         "west-mesa"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -329,7 +343,8 @@
         "relatedEvidence": ["desert-canyon-background"],
         "note": "Archived background exists; the original background-to-atlas conversion has not been reproduced."
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/factory-optimized.json.gz.b64",
@@ -347,7 +362,7 @@
         "service-deck-2",
         "service-deck-3"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -357,7 +372,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/factory-sprites.json.gz.b64",
@@ -375,7 +391,7 @@
         "service-deck-2",
         "service-deck-3"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -385,7 +401,8 @@
         "transformation": null,
         "reproduced": false
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/factory-v8-optimized.json.gz.b64",
@@ -400,7 +417,7 @@
         "stopped-conveyor",
         "toolbox"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -410,7 +427,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/factory-v8-sprites.json.gz.b64",
@@ -425,7 +443,7 @@
         "stopped-conveyor",
         "toolbox"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -435,7 +453,8 @@
         "transformation": "compile-factory-concept.py, full atlas followed by --small",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/jungle-sprites.json.gz.b64",
@@ -456,7 +475,7 @@
         "wild-undergrowth",
         "wild-waterfall-cliff"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -466,7 +485,8 @@
         "transformation": null,
         "reproduced": false
       },
-      "usage": "experimental"
+      "usage": "experimental",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/sprites.json.gz.b64",
@@ -490,7 +510,7 @@
         "shoot-run-b",
         "shoot-stand"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -500,7 +520,8 @@
         "transformation": null,
         "reproduced": false
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/temple-kit-optimized.json.gz.b64",
@@ -515,7 +536,7 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -525,7 +546,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/temple-kit-sprites.json.gz.b64",
@@ -540,7 +562,7 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -550,7 +572,8 @@
         "transformation": "compile-location-kits.py",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/temple-optimized.json.gz.b64",
@@ -570,7 +593,7 @@
         "supply-chest",
         "temple-entrance"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -580,7 +603,8 @@
         "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
         "reproduced": true
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/temple-sprites.json.gz.b64",
@@ -600,7 +624,7 @@
         "supply-chest",
         "temple-entrance"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -610,7 +634,8 @@
         "transformation": null,
         "reproduced": false
       },
-      "usage": "released"
+      "usage": "released",
+      "originDeclaration": "project-owner-2026-11-27"
     },
     {
       "path": "assets/volcano-sprites.json.gz.b64",
@@ -633,7 +658,7 @@
         "steel-barricade",
         "truss-catwalk"
       ],
-      "rightsStatus": "review-required",
+      "rightsStatus": "license-pending",
       "license": null,
       "creator": null,
       "permissionEvidence": [],
@@ -643,7 +668,18 @@
         "transformation": null,
         "reproduced": false
       },
-      "usage": "experimental"
+      "usage": "experimental",
+      "originDeclaration": "project-owner-2026-11-27"
     }
-  ]
+  ],
+  "ownerDeclaration": {
+    "id": "project-owner-2026-11-27",
+    "date": "2026-11-27",
+    "declaredBy": "0w1Max",
+    "source": "Project owner statement in the project conversation",
+    "scope": "All project artwork, including the character, backgrounds and terrain",
+    "statement": "The artwork was created from scratch in collaboration with the assistant.",
+    "evidenceType": "owner-statement",
+    "publicArtworkLicense": null
+  }
 }

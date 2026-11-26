@@ -2,19 +2,18 @@
 
 **English** · [Русский](ASSET_RIGHTS.ru.md)
 
-The MIT grant in [LICENSE-CODE](LICENSE-CODE) covers original project code under `src/`, `scripts/`, `site/`, `tests/`, `tools/`, workflow configuration and documentation. It does **not** grant rights to all artwork in this repository or to third-party trademarks.
+The project owner confirmed on 27 November 2026 that the character, backgrounds, obstacles and platforms were created from scratch in collaboration with the assistant. This is recorded as an owner declaration in the [artwork inventory](compliance/artwork-manifest.json). Missing earlier records are not evidence that artwork was copied from another game.
 
-| Resource                                                               | Status                                                                                                                         |
-| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Original generator / mission / publication code                        | MIT, see LICENSE-CODE                                                                                                          |
-| Archived font experiments (not bundled here)                           | Remain in the original v2.7.0 snapshot with their OFL notices                                                                  |
-| Soldier sprites, backgrounds, terrain atlases and derived SVG previews | Complete provenance and redistribution permissions have not been established in the repository; excluded from the code license |
-| Technology logos, profile icons, project names                         | Third-party rights may apply; excluded from the code license                                                                   |
+| Resource                                    | Terms                                                                                                |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Original code, workflows and documentation  | MIT within the scope of [LICENSE-CODE](LICENSE-CODE)                                                 |
+| Original artwork and its vector derivatives | Original creation declared by the owner; a separate public artwork license has not yet been selected |
+| Native monospace HUD                        | System font; no font file bundled                                                                    |
+| Archived font experiments                   | Outside this product tree; historical OFL notices remain applicable                                  |
+| Third-party names, marks or logos           | Not licensed by the project's code or artwork terms                                                  |
 
-This is an independent project, not an official Contra or Konami product. Referencing a game style does not establish permission to redistribute its original artwork. A public GitHub repository and the ability to fork are not a blanket artwork license.
+The artwork remains outside the code's MIT grant. The remaining publishing decision is its explicit public reuse license; no replacement is planned merely because earlier source notes were incomplete. The owner declaration is not a guarantee of copyrightability or an independent legal certification.
 
-The installation guide describes a technical reuse path. For a broadly redistributed or commercial artwork bundle, first establish the source/license of every graphic or substitute artwork you own or have permission to use. No claim of completed rights clearance is made by the current release. Optimized vector atlases remain derived artwork with the same unresolved provenance.
+See [artwork provenance and licensing](docs/en/ARTWORK.md) for the recovered sources, verified compilation chain and procedure for future contributions. Optimizing a vector atlas does not change the underlying artwork's terms. Generated profile SVGs and previews contain the same artwork.
 
-## Provenance review
-
-See the [dated artwork review](docs/en/ARTWORK.md) and [file inventory](compliance/artwork-manifest.json). Four terrain atlases have been reproduced from archived PNGs; all 19 packed atlas files still require rights review. Technical reproduction is not permission.
+This is an independent project, not an official Contra/Konami product. No rights to another game's original artwork or trademarks are granted.
