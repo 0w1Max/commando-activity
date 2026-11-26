@@ -1,0 +1,90 @@
+{
+  "baseline": "v2.8.1",
+  "commit": "f68e1b35f94a12deffe8205945d90dfbd69657b7",
+  "cases": [
+    {
+      "variant": "demo",
+      "location": "desert",
+      "seed": 49,
+      "sha256": "b9e7f96eb894ee0aa42d55c8cf41833e88325c63ec4f01c46c0128fb9aea0cf9",
+      "animations": 589
+    },
+    {
+      "variant": "demo",
+      "location": "industrial",
+      "seed": 5,
+      "sha256": "73600eaf6d18ad38dd36c570611986c1a3460851a7ee19577e39ffccb31997e1",
+      "animations": 589
+    },
+    {
+      "variant": "demo",
+      "location": "temple",
+      "seed": 5,
+      "sha256": "ecb198acd36d93f8290e86faa53468366c90be2817a418e67b50191c552debbe",
+      "animations": 589
+    },
+    {
+      "variant": "demo",
+      "location": "coast",
+      "seed": 5,
+      "sha256": "f476fa9c046a338b32d96fe01a89868827ba898083075da313aab3447911cd78",
+      "animations": 589
+    },
+    {
+      "variant": "empty",
+      "location": "desert",
+      "seed": 49,
+      "sha256": "7107a0329fbd43dceeaebec1b9e0204964e7eb150ff454e7f70fe66887284211",
+      "animations": 19
+    },
+    {
+      "variant": "empty",
+      "location": "industrial",
+      "seed": 5,
+      "sha256": "94eaac6c08a519ca605b2bb0872bb10d7608efc326087d47495c8d02e0e1b3a5",
+      "animations": 19
+    },
+    {
+      "variant": "empty",
+      "location": "temple",
+      "seed": 5,
+      "sha256": "c9be2383fe365768a240419f9588cbc2a846e10882f04ed4d0d3800b655685b2",
+      "animations": 19
+    },
+    {
+      "variant": "empty",
+      "location": "coast",
+      "seed": 5,
+      "sha256": "65702b69895f51cc1aa009fa38610c194bc6c7e4e4a9529b6aa68adef395cc11",
+      "animations": 19
+    },
+    {
+      "variant": "dense",
+      "location": "desert",
+      "seed": 49,
+      "sha256": "83427954414993b5aa3910541f4e583e5fa3f5f02090eb03a2ce92ab4faeeb00",
+      "animations": 785
+    },
+    {
+      "variant": "dense",
+      "location": "industrial",
+      "seed": 5,
+      "sha256": "23077868c5a2113299ec2af60cda1e749079de232c37e854e9f3717d7284e6ed",
+      "animations": 785
+    },
+    {
+      "variant": "dense",
+      "location": "temple",
+      "seed": 5,
+      "sha256": "1147e45ac96c60181f731368af8b5d3e1ab2ccd7562d6830834f9a5dd90ae3a9",
+      "animations": 785
+    },
+    {
+      "variant": "dense",
+      "location": "coast",
+      "seed": 5,
+      "sha256": "b4c1a3f4049120090bf224ac537ab9b6f9a479e622d000330ee28d0672dd38fd",
+      "animations": 785
+    }
+  ]
+}

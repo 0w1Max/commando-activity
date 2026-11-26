@@ -1,0 +1,7 @@
+node_modules/
+assets/
+fixtures/
+generated/
+reference/
+package-lock.json
+docs/migration-snapshot.json

@@ -1,11 +1,72 @@
-import {installArtifacts} from './setup.mjs';
-const copy={
-en:{title:'Your activity. A living world.',intro:'Add an animated contribution calendar to your GitHub profile in three steps. No fork or server required.',start:'Start with your GitHub login',login:'GitHub username',advanced:'Advanced: profile branch',branch:'Default branch of your profile repository',prepare:'Prepare my installation',privacy:'Your login is used only in this page to generate links. Never enter a token here.',secretTitle:'Add your calendar secret',secretText:'Create a classic GitHub PAT with read:user only. Add it as COMMANDO_READ_USER_TOKEN in your profile repository. The secret stays in GitHub.',secretLink:'Open repository secrets',workflowTitle:'Add the small workflow',workflowText:'Open the prepared file, commit it to your default branch, then run Commando Activity from Actions. Wait for a successful first run.',add:'Create workflow in GitHub',copy:'Copy',imageTitle:'Add the image to your README',refresh:'Your calendar refreshes twice daily. GitHub may cache the image or delay scheduled runs.',guide:'Detailed guide',rights:'Original code and legacy artwork have separate rights. See ASSET_RIGHTS.md before redistributing artwork.',invalid:'Check the GitHub username and branch.',copied:'Copied.',copyFailed:'Select the text and copy it manually.'},
-ru:{title:'Твоя активность. Живой мир.',intro:'Добавь анимированный календарь в GitHub-профиль за три шага. Без форка и сервера.',start:'Начни со своего логина GitHub',login:'Логин GitHub',advanced:'Дополнительно: ветка профиля',branch:'Основная ветка профильного репозитория',prepare:'Подготовить установку',privacy:'Логин используется только на этой странице для подготовки ссылок. Никогда не вводи сюда токен.',secretTitle:'Добавь секрет календаря',secretText:'Создай classic PAT GitHub только со scope read:user. Добавь его в секрет COMMANDO_READ_USER_TOKEN профильного репозитория. Секрет остаётся в GitHub.',secretLink:'Открыть секреты репозитория',workflowTitle:'Добавь короткий workflow',workflowText:'Открой подготовленный файл, сохрани его в основной ветке. Затем запусти Commando Activity во вкладке Actions и дождись успешного первого запуска.',add:'Создать workflow в GitHub',copy:'Копировать',imageTitle:'Вставь картинку в README',refresh:'Календарь обновляется дважды в сутки. Возможны кеш картинки и задержки расписания GitHub.',guide:'Подробная инструкция',rights:'У оригинального кода и старой графики разные права. Перед распространением ресурсов прочитай ASSET_RIGHTS.md.',invalid:'Проверь логин GitHub и имя ветки.',copied:'Скопировано.',copyFailed:'Выдели текст и скопируй вручную.'}
-};
-let lang=navigator.language.startsWith('ru')?'ru':'en';
-function language(value){lang=value;document.documentElement.lang=value;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=copy[value][el.dataset.i18n]);document.getElementById('guide').href=`https://github.com/0w1Max/commando-activity/blob/main/docs/${value}/INSTALL.md`;document.getElementById('status').textContent='';document.getElementById('error').textContent='';}
-document.getElementById('en').onclick=()=>language('en');document.getElementById('ru').onclick=()=>language('ru');
-document.getElementById('form').addEventListener('submit',event=>{event.preventDefault();try{const a=installArtifacts(document.getElementById('login').value.trim(),document.getElementById('branch').value.trim());document.getElementById('workflow').value=a.workflow;document.getElementById('markdown').value=a.markdown;for(const [id,key] of [['secret','secretUrl'],['add','workflowUrl'],['actions','actionsUrl']])document.getElementById(id).href=a[key];document.getElementById('results').hidden=false;document.getElementById('error').textContent='';}catch{document.getElementById('error').textContent=copy[lang].invalid;document.getElementById('results').hidden=true;}});
-document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById(button.dataset.copy).value);document.getElementById('status').textContent=copy[lang].copied;}catch{document.getElementById('status').textContent=copy[lang].copyFailed;}}));
-language(lang);
+import { installArtifacts } from './setup.mjs';
+import { translations, preferredLanguage } from './i18n.mjs';
+const element = (id) => document.getElementById(id);
+const storageKey = 'commando-language';
+let saved = null;
+try {
+  saved = localStorage.getItem(storageKey);
+} catch {
+  /* Storage can be disabled; installation still works. */
+}
+let lang = preferredLanguage({ search: location.search, saved, browser: navigator.language });
+function setLanguage(value, persist = false) {
+  lang = value;
+  document.documentElement.lang = value;
+  for (const node of document.querySelectorAll('[data-i18n]'))
+    node.textContent = translations[value][node.dataset.i18n];
+  for (const code of ['en', 'ru'])
+    element(code).setAttribute('aria-pressed', String(code === value));
+  element('guide').href =
+    `https://github.com/0w1Max/commando-activity/blob/main/docs/${value}/INSTALL.md`;
+  element('status').textContent = '';
+  element('error').textContent = '';
+  if (persist) {
+    try {
+      localStorage.setItem(storageKey, value);
+    } catch {
+      /* Preference persistence is optional. */
+    }
+    const url = new URL(location.href);
+    url.searchParams.set('lang', value);
+    history.replaceState(null, '', url);
+  }
+}
+for (const code of ['en', 'ru'])
+  element(code).addEventListener('click', () => setLanguage(code, true));
+element('form').addEventListener('input', () => {
+  element('results').hidden = true;
+  element('status').textContent = '';
+  element('error').textContent = '';
+});
+element('form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  try {
+    const artifacts = installArtifacts(
+      element('login').value.trim(),
+      element('branch').value.trim(),
+    );
+    element('workflow').value = artifacts.workflow;
+    element('markdown').value = artifacts.markdown;
+    for (const [id, key] of [
+      ['secret', 'secretUrl'],
+      ['add', 'workflowUrl'],
+      ['actions', 'actionsUrl'],
+    ])
+      element(id).href = artifacts[key];
+    element('results').hidden = false;
+    element('error').textContent = '';
+  } catch {
+    element('error').textContent = translations[lang].invalid;
+    element('results').hidden = true;
+  }
+});
+for (const button of document.querySelectorAll('[data-copy]'))
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(element(button.dataset.copy).value);
+      element('status').textContent = translations[lang].copied;
+    } catch {
+      element('status').textContent = translations[lang].copyFailed;
+    }
+  });
+setLanguage(lang);

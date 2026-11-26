@@ -2,7 +2,7 @@ MIT License — original code only
 
 Copyright (c) 2026 Krupetskov Maksim
 
-Scope: original project source code in scripts/, site/, tests, GitHub workflow
+Scope: original project source code in src/, scripts/, site/, tests/, tools/, GitHub workflow
 configuration, and documentation. Artwork, sprites, backgrounds, bundled
 fonts, logos, generated visual assets and third-party materials are excluded.
 See ASSET_RIGHTS.md and accompanying third-party license notices.

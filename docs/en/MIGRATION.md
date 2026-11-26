@@ -1,20 +1,20 @@
 # Repository audit and migration
 
-[Русский](../ru/MIGRATION.md) · 2026-11-24
+**English** · [Русский](../ru/MIGRATION.md) · 2026-11-24
 
 ## Findings
 
-| Finding | Effect | Resolution |
-|---|---|---|
-| Personal profile and reusable game shared one repository | A product fork included the author's portfolio; releases and issues had mixed purposes | Standalone `0w1Max/commando-activity`; profile keeps a small caller |
-| Six long-lived feature branches | No clear active source; old design names looked like current products | Archive exact heads, then retire obsolete branches after successful migration |
-| Original Draft PR #1 still open | It appeared to be active despite stable releases 2.6/2.7 | Supersede after preserving its unique history |
-| Original feature branch has 122 commits outside current main | Blind deletion could lose experimental history | Record its SHA and preserve an archive tag before deletion |
-| About 71 MB of preview files in default tree | Slow download and contradictory fonts/layouts in historical samples | Keep historical art in the original v2.7.0 snapshot, not the new runtime tree |
-| Rejected fonts loaded by runtime module | Unused resources remained dependencies of production | Native approved monospace module; experiments remain archived |
-| Profile workflow and generator lived together | Installation required a full fork and repeated source copies | Pinned reusable workflow, explicit caller secret, atomic output in caller repository |
-| Russian-only technical docs mixed with English personal README | No coherent language navigation | Separate EN/RU product READMEs, install and developer guides |
-| Missing asset provenance | Cannot honestly describe the whole art bundle as freely licensed | Preserve explicit code/art distinction; rights clearance remains open |
+| Finding                                                        | Effect                                                                                 | Resolution                                                                           |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Personal profile and reusable game shared one repository       | A product fork included the author's portfolio; releases and issues had mixed purposes | Standalone `0w1Max/commando-activity`; profile keeps a small caller                  |
+| Six long-lived feature branches                                | No clear active source; old design names looked like current products                  | Archive exact heads, then retire obsolete branches after successful migration        |
+| Original Draft PR #1 still open                                | It appeared to be active despite stable releases 2.6/2.7                               | Supersede after preserving its unique history                                        |
+| Original feature branch has 122 commits outside current main   | Blind deletion could lose experimental history                                         | Record its SHA and preserve an archive tag before deletion                           |
+| About 71 MB of preview files in default tree                   | Slow download and contradictory fonts/layouts in historical samples                    | Keep historical art in the original v2.7.0 snapshot, not the new runtime tree        |
+| Rejected fonts loaded by runtime module                        | Unused resources remained dependencies of production                                   | Native approved monospace module; experiments remain archived                        |
+| Profile workflow and generator lived together                  | Installation required a full fork and repeated source copies                           | Pinned reusable workflow, explicit caller secret, atomic output in caller repository |
+| Russian-only technical docs mixed with English personal README | No coherent language navigation                                                        | Separate EN/RU product READMEs, install and developer guides                         |
+| Missing asset provenance                                       | Cannot honestly describe the whole art bundle as freely licensed                       | Preserve explicit code/art distinction; rights clearance remains open                |
 
 A branch contains a complete repository snapshot. Seeing the portfolio README in an old game branch is normal Git behavior, not corrupted files. The architectural issue was having two independently maintained products in one repository. Historical snapshots intentionally retain the contents they had at the time.
 
