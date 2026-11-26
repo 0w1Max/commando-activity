@@ -1,7 +1,7 @@
 {
   "project": "Commando Activity",
-  "version": "2.8.2",
-  "previous_version": "2.8.1",
+  "version": "2.8.3",
+  "previous_version": "2.8.2",
   "status": "stable",
   "publication": "daily-rotation",
   "settings": "commando-settings.json",
@@ -66,11 +66,12 @@
     "Output SVG/state are published atomically. New forks can initialize output automatically.",
     "Code reuse and artwork rights have separate scopes; see LICENSE-CODE and ASSET_RIGHTS.md.",
     "Standalone distribution; profile data and historical experiments remain in the original v2.7.0 archive.",
-    "2.8.2 separates pure domain logic, transport, rendering and publication; it retains the optimized 2.8.1 render contract."
+    "2.8.2 separates pure domain logic, transport, rendering and publication; it retains the optimized 2.8.1 render contract.",
+    "2.8.3 inventories artwork provenance and adds review checks; it does not claim completed artwork clearance or enabled repository settings."
   ],
   "source_repository": "0w1Max/commando-activity",
   "artwork_approved_on": "2026-11-24",
-  "released_on": "2026-11-26",
+  "released_on": "2026-11-27",
   "origin_repository": "0w1Max/0w1Max",
   "origin_commit": "4a49b871fb219a46397a8ba671a2497338553b39"
 }

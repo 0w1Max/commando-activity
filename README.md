@@ -7,11 +7,11 @@ Your GitHub contribution calendar, brought to life as an animated pixel-art worl
 [![Checks](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml/badge.svg)](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/0w1Max/commando-activity)](https://github.com/0w1Max/commando-activity/releases/latest)
 
-![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.2)
+![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.3)
 
 Four rotating locations. A soldier patrols, jumps over obstacles and clears your contribution cells. Generated from your real activity; this is an SVG animation, with no keyboard controls or server to maintain.
 
-**Current version: 2.8.2.** The mobile optimization introduced in 2.8.1 is retained.
+**Current version: 2.8.3.** The mobile optimization introduced in 2.8.1 is retained.
 
 ## Add it to your profile
 
@@ -59,3 +59,7 @@ Your profile contains a small version-pinned caller workflow and generated outpu
 Commando Activity was inspired by [pacman-contribution-graph](https://github.com/abozanona/pacman-contribution-graph) and its idea of turning the GitHub contribution calendar into a game animation.
 
 Independent project; not an official Contra/Konami product.
+
+## Artwork and repository protection
+
+[Artwork review](docs/en/ARTWORK.md) · [Repository protection setup](docs/en/REPOSITORY_SECURITY.md). The inventory records known sources without inventing missing permissions; protection templates require separate activation in GitHub.

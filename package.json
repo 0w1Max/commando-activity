@@ -1,6 +1,6 @@
 {
   "name": "commando-activity",
-  "version": "2.8.2",
+  "version": "2.8.3",
   "private": true,
   "type": "module",
   "engines": {
@@ -10,10 +10,12 @@
     "test": "node --test tests/*.test.mjs",
     "demo": "node scripts/publish-daily.mjs --demo",
     "check": "node tools/check-project.mjs",
-    "format": "prettier --write src scripts site tools tests eslint.config.mjs *.md docs .github package.json commando-*.json .prettierrc.json",
-    "format:check": "prettier --check src scripts site tools tests eslint.config.mjs *.md docs .github package.json commando-*.json .prettierrc.json",
+    "format": "prettier --write src scripts site tools tests eslint.config.mjs *.md docs .github package.json commando-*.json compliance examples/rulesets .prettierrc.json",
+    "format:check": "prettier --check src scripts site tools tests eslint.config.mjs *.md docs .github package.json commando-*.json compliance examples/rulesets .prettierrc.json",
     "check:art": "node scripts/compile-pixel-art.mjs --check",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check:assets": "node tools/check-artwork.mjs",
+    "check:assets:cleared": "node tools/check-artwork.mjs --require-cleared"
   },
   "devDependencies": {
     "acorn": "8.19.0",

@@ -17,3 +17,7 @@ Use the repository's Security → Report a vulnerability **if that feature is av
 - Generated-SVG checks enforce this generator's output contract. They are not a general-purpose sanitizer for arbitrary uploaded SVG files.
 
 CI has no production secrets on PRs. Release writes occur only after checks on main. Dependency audit and regression checks reduce risk; they do not constitute a penetration test or guarantee that no vulnerabilities exist. Repository protection/private-reporting settings must be verified separately by an administrator.
+
+## Repository settings
+
+The [setup and dated observations](docs/en/REPOSITORY_SECURITY.md) distinguish disabled ruleset templates from live protections. On 27 November 2026, both repositories reported unprotected main branches. Administrator changes remain pending.

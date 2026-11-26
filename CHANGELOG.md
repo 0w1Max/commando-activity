@@ -6,6 +6,19 @@ Notable user-facing changes. Format: [Keep a Changelog](https://keepachangelog.c
 
 ## [Unreleased]
 
+## [2.8.3] - 2026-11-27
+
+### Added
+
+- Hash-checked inventory of all 19 packed artwork files, immutable archived source references and a documented rights-review procedure in English and Russian.
+- Explicit incomplete-clearance check, artwork contribution requirements and scoped MIT license text.
+- Four disabled repository-protection drafts, tailored to source branches, generated output and release tags, with bilingual activation/verification instructions.
+
+### Changed
+
+- Document the byte-identical reproduction of four terrain atlases from archived PNGs; distinguish technical provenance from redistribution permission.
+- Record observed unprotected branches and pending administrator settings without claiming activation. Game artwork, timing and mobile rendering are unchanged.
+
 ## [2.8.2] - 2026-11-26
 
 ### Added

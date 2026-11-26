@@ -7,11 +7,11 @@
 [![Проверки](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml/badge.svg)](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml)
 [![Релиз](https://img.shields.io/github/v/release/0w1Max/commando-activity)](https://github.com/0w1Max/commando-activity/releases/latest)
 
-![Живая анимация](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.2)
+![Живая анимация](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.3)
 
 Четыре сменяющие друг друга локации. Боец патрулирует уровень, перепрыгивает препятствия и расстреливает клетки вашего календаря. Это SVG-анимация по реальной активности, без управления клавиатурой и собственного сервера.
 
-**Текущая версия: 2.8.2.** Оптимизация для телефонов из 2.8.1 сохранена.
+**Текущая версия: 2.8.3.** Оптимизация для телефонов из 2.8.1 сохранена.
 
 ## Добавить в профиль
 
@@ -59,3 +59,7 @@ GitHub Actions получает календарь, строит воспрои�
 На создание Commando Activity вдохновил проект [pacman-contribution-graph](https://github.com/abozanona/pacman-contribution-graph) — идея превращения календаря активности GitHub в игровую анимацию.
 
 Независимый проект, не официальный продукт Contra/Konami.
+
+## Графика и защита репозитория
+
+[Проверка графики](docs/ru/ARTWORK.md) · [Настройка защиты](docs/ru/REPOSITORY_SECURITY.md). Реестр фиксирует известные источники без выдуманных разрешений; заготовки защиты требуют отдельного включения в GitHub.

@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-27",
+  "baselineCommit": "428ca588364a42cbefabf8c360959f42fb656548",
+  "scope": "Every file in assets/. Generator code is MIT; this manifest does not grant rights to its artwork inputs or generated SVG derivatives. Native monospace is a system font, not a bundled font file.",
+  "evidence": [
+    {
+      "id": "coast-kit-source",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/coast-kit-source.png",
+      "sha256": "31beca0d19b480ac87a1cf6b3b15871869ff242276b477a7e3bff05c4e3bf1f7",
+      "gitBlobSha": "5af6f95eb8450d9f892fc2b8f62051126a6ab9ca",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "desert-canyon-background",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/desert-canyon-background.png",
+      "sha256": "507eace3897cda3c5cf677dd750d2409d26622fe4cfb39e877469eda6ac8fe79",
+      "gitBlobSha": "0889570389c6e47a433087ffcc92d0788787bd0f",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "desert-kit-source",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/desert-kit-source.png",
+      "sha256": "c63a647d6a14fd1806124a184d6a254e9cda763462aaa36b95c44ccb715e4385",
+      "gitBlobSha": "117ac056a5777463423da1e9bdd27ac6a510f37e",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "factory-v8-small-source",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/factory-v8-small-source.png",
+      "sha256": "b8ae243eea009f9091c491b138682ed7df08f6d43878db969425fd5588dd3c69",
+      "gitBlobSha": "384e9c4936929961cc0075397e6e8967ea4e1a44",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "factory-v8-source",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/factory-v8-source.png",
+      "sha256": "71c1363c791f8a97e3f9b5723a9dd06223c1c745eeb8da8c80c3f15802fa64d0",
+      "gitBlobSha": "c07b5175504b4f7d4450d9ede5bba6e690b3f591",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "location-kit-revision-2-source",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/location-kit-revision-2-source.png",
+      "sha256": "9072af857fdce1ba0ab31b2f6556fc8e7b9ca8100ceb9b1626436039523b5e62",
+      "gitBlobSha": "8a7b575d1eec2142e7106d27a616b9e6eb9cc05c",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "temple-kit-source",
+      "kind": "archived-image",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/temple-kit-source.png",
+      "sha256": "c229623c3cb0266a0ae7853e4072bcad24adf2673080e2126c3794d14e6fbd65",
+      "gitBlobSha": "97dd2b55fcd507950c34850d1801e71ddb531e5e",
+      "creator": null,
+      "generator": null,
+      "license": null,
+      "rightsStatus": "review-required"
+    },
+    {
+      "id": "compile-factory-concept",
+      "kind": "archived-compiler",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/scripts/compile-factory-concept.py",
+      "sha256": "8ac811722b698603662da5121015f914298b271559ab95803a1fbd9275f558ad",
+      "gitBlobSha": "673db8e1f9e9b9f7e2db1ea275eeb1febf44aa16"
+    },
+    {
+      "id": "compile-location-kits",
+      "kind": "archived-compiler",
+      "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/scripts/compile-location-kits.py",
+      "sha256": "b0bb013295381caf2764e900b4b7868f40ee008e50184e949b06d75bce2c179b",
+      "gitBlobSha": "ead37d73de5dc467aaa41dd130ff02755c490e78"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/coast-kit-optimized.json.gz.b64",
+      "sha256": "c30c88ec35dea0f242e930d5b4df1a78517a47841f1bab0a8091538fd0ed0ccc",
+      "gitBlobSha": "b251b6e19e4e26b867c2e5c5efdd430214dfc3e1",
+      "entries": [
+        "obstacle-0",
+        "obstacle-1",
+        "obstacle-2",
+        "obstacle-3",
+        "platform-0",
+        "platform-1",
+        "platform-2"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-kit-optimized.json.gz.b64",
+        "inputs": ["assets/coast-kit-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/coast-kit-sprites.json.gz.b64",
+      "sha256": "13a134b2e5435330b7ea33b21d1c4b3f6539482275a0ac738f5598268e0799ef",
+      "gitBlobSha": "4917902e9414069eaf7e92c0637510fbadfd5913",
+      "entries": [
+        "obstacle-0",
+        "obstacle-1",
+        "obstacle-2",
+        "obstacle-3",
+        "platform-0",
+        "platform-1",
+        "platform-2"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-kit-sprites.json.gz.b64",
+        "inputs": ["coast-kit-source", "location-kit-revision-2-source", "compile-location-kits"],
+        "transformation": "compile-location-kits.py",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/coast-optimized.json.gz.b64",
+      "sha256": "f3f20e70d69cb3e876a344e092e44b4ebaaecbab3137173c2c778f3c7dd15add",
+      "gitBlobSha": "5d642fd82f67b0ac7167209b63811383a5ecd564",
+      "entries": [
+        "basalt-block",
+        "broken-pier",
+        "driftwood",
+        "levee-0",
+        "levee-1",
+        "levee-2",
+        "levee-3",
+        "lighthouse",
+        "offshore-reef",
+        "salvage-crate",
+        "stone-shelf",
+        "timber-span"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-optimized.json.gz.b64",
+        "inputs": ["assets/coast-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/coast-sprites.json.gz.b64",
+      "sha256": "5ea4b533202ff191706385a682ef0fcbe63ee7c2be728b57db0602f68795607e",
+      "gitBlobSha": "04cadae49cbb4f856c426269768770fd699cc3de",
+      "entries": [
+        "basalt-block",
+        "broken-pier",
+        "driftwood",
+        "levee-0",
+        "levee-1",
+        "levee-2",
+        "levee-3",
+        "lighthouse",
+        "offshore-reef",
+        "salvage-crate",
+        "stone-shelf",
+        "timber-span"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/desert-kit-optimized.json.gz.b64",
+      "sha256": "ab3de5c91231201185b24c63a059e211cbfae1a094367db6f612609624a01574",
+      "gitBlobSha": "73b196930dd823187fbd0eba7a384148477d6d01",
+      "entries": [
+        "obstacle-0",
+        "obstacle-1",
+        "obstacle-2",
+        "obstacle-3",
+        "platform-0",
+        "platform-1",
+        "platform-2"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-kit-optimized.json.gz.b64",
+        "inputs": ["assets/desert-kit-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/desert-kit-sprites.json.gz.b64",
+      "sha256": "c141c9bb3d3e8b4bd2c1b61f15dba5978c979bfb8f8985da765bdacec38a0b49",
+      "gitBlobSha": "95652fca4049ecab31be747ec4b1ad916d7c7a89",
+      "entries": [
+        "obstacle-0",
+        "obstacle-1",
+        "obstacle-2",
+        "obstacle-3",
+        "platform-0",
+        "platform-1",
+        "platform-2"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-kit-sprites.json.gz.b64",
+        "inputs": ["desert-kit-source", "location-kit-revision-2-source", "compile-location-kits"],
+        "transformation": "compile-location-kits.py",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/desert-optimized.json.gz.b64",
+      "sha256": "06addd983a22bc83824f168295e2a5a4122c24324d91753dbf7e124b5ee619ea",
+      "gitBlobSha": "01c9d87049297ea72d7c41dc019d67070588f1b8",
+      "entries": [
+        "ashlar-stone-platform",
+        "broken-pillar",
+        "desert-sandbags",
+        "distant-mesas",
+        "dusty-crate",
+        "east-ridge",
+        "eroded-stone-ledge",
+        "ground-0",
+        "ground-1",
+        "ground-2",
+        "ground-3",
+        "ground-4",
+        "ground-5",
+        "ground-6",
+        "ground-7",
+        "sandstone-boulder",
+        "sandstone-shelf",
+        "west-mesa"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-optimized.json.gz.b64",
+        "inputs": ["assets/desert-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/desert-sprites.json.gz.b64",
+      "sha256": "2fa6bc302ea2fc114f9ad1712db41a26e3f5cf2a61929261efa2c53135ab9f30",
+      "gitBlobSha": "e2a1f19fc29e17384a11c0fe68d740a33ca79776",
+      "entries": [
+        "ashlar-stone-platform",
+        "broken-pillar",
+        "desert-sandbags",
+        "distant-mesas",
+        "dusty-crate",
+        "east-ridge",
+        "eroded-stone-ledge",
+        "ground-0",
+        "ground-1",
+        "ground-2",
+        "ground-3",
+        "ground-4",
+        "ground-5",
+        "ground-6",
+        "ground-7",
+        "sandstone-boulder",
+        "sandstone-shelf",
+        "west-mesa"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false,
+        "relatedEvidence": ["desert-canyon-background"],
+        "note": "Archived background exists; the original background-to-atlas conversion has not been reproduced."
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/factory-optimized.json.gz.b64",
+      "sha256": "183b129987752005d9253b4639af519e8a1c5291dcfecc99a7d2ea821355e798",
+      "gitBlobSha": "86225a3ef597b5c757a75b3754f72750b6c79c98",
+      "entries": [
+        "foundation-elbow",
+        "foundation-junction",
+        "foundation-valve",
+        "foundry",
+        "loading-bay",
+        "process-yard",
+        "service-deck-0",
+        "service-deck-1",
+        "service-deck-2",
+        "service-deck-3"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-optimized.json.gz.b64",
+        "inputs": ["assets/factory-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/factory-sprites.json.gz.b64",
+      "sha256": "e8d0b7bda05d880cc1add1550a5b3820fc7d003785d1d014ec805a365e95da2b",
+      "gitBlobSha": "105600fab57d09e5111ee8c9324ce0906703628b",
+      "entries": [
+        "foundation-elbow",
+        "foundation-junction",
+        "foundation-valve",
+        "foundry",
+        "loading-bay",
+        "process-yard",
+        "service-deck-0",
+        "service-deck-1",
+        "service-deck-2",
+        "service-deck-3"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/factory-v8-optimized.json.gz.b64",
+      "sha256": "a51a5622646bf94058a1f99262442255484ee9444290d82ae2fe9500e196731f",
+      "gitBlobSha": "3a175036541a0f4c1ebb2caeb224e87e7327ba1d",
+      "entries": [
+        "cargo-crate",
+        "concrete-rubble",
+        "maintenance-barrier",
+        "service-deck",
+        "steel-catwalk",
+        "stopped-conveyor",
+        "toolbox"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-v8-optimized.json.gz.b64",
+        "inputs": ["assets/factory-v8-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/factory-v8-sprites.json.gz.b64",
+      "sha256": "90cda5e3e280a57be5f61c46dc3f57c8aee346196f0c7e8290bfb04c5c32a2d2",
+      "gitBlobSha": "21dd7bd1078a4036f0d21472a87ff722e9056603",
+      "entries": [
+        "cargo-crate",
+        "concrete-rubble",
+        "maintenance-barrier",
+        "service-deck",
+        "steel-catwalk",
+        "stopped-conveyor",
+        "toolbox"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-v8-sprites.json.gz.b64",
+        "inputs": ["factory-v8-source", "factory-v8-small-source", "compile-factory-concept"],
+        "transformation": "compile-factory-concept.py, full atlas followed by --small",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/jungle-sprites.json.gz.b64",
+      "sha256": "44e8b7464064ba700b4b70b79357735fd01cd43018e62ab6c2bf794bead8b068",
+      "gitBlobSha": "b0768bcd10bd1bf10677b2f1fdb7469c712bb025",
+      "entries": [
+        "ground-strip",
+        "wild-broken-log",
+        "wild-distant-forest",
+        "wild-fallen-trunk",
+        "wild-log-platform",
+        "wild-moss-boulder",
+        "wild-rock-pile",
+        "wild-root-bundle",
+        "wild-root-platform",
+        "wild-stone-ledge",
+        "wild-stump",
+        "wild-undergrowth",
+        "wild-waterfall-cliff"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/jungle-sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false
+      },
+      "usage": "experimental"
+    },
+    {
+      "path": "assets/sprites.json.gz.b64",
+      "sha256": "aaaf118f9e9eaf21bb46b4d781cc5f9ef3a6c6127aaaadaef94cf58f3f7fccad",
+      "gitBlobSha": "097882208c42d313e96aac3af83e5a10ff1a4d10",
+      "entries": [
+        "aim",
+        "aim-run",
+        "crouch",
+        "crouch-shoot",
+        "idle-a",
+        "idle-b",
+        "jump",
+        "jump-shoot",
+        "run-a",
+        "run-b",
+        "run-c",
+        "run-d",
+        "shoot-idle",
+        "shoot-run-a",
+        "shoot-run-b",
+        "shoot-stand"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/temple-kit-optimized.json.gz.b64",
+      "sha256": "cc70328c9f202c662d7ce5945423638b0056b3dc17e2bdd069ba31cf94f031d5",
+      "gitBlobSha": "4c80c95eca28f6217bcc3590dbe54a8bfb1f7328",
+      "entries": [
+        "obstacle-0",
+        "obstacle-1",
+        "obstacle-2",
+        "obstacle-3",
+        "platform-0",
+        "platform-1",
+        "platform-2"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-kit-optimized.json.gz.b64",
+        "inputs": ["assets/temple-kit-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/temple-kit-sprites.json.gz.b64",
+      "sha256": "39c6ce75a2d5f57f68a11e1dd55442dcf59fd3a2c19c0b8d766d2e3421867eec",
+      "gitBlobSha": "1f3986b75bcb3f81ae5efff87b71b6ed14de1b4e",
+      "entries": [
+        "obstacle-0",
+        "obstacle-1",
+        "obstacle-2",
+        "obstacle-3",
+        "platform-0",
+        "platform-1",
+        "platform-2"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-kit-sprites.json.gz.b64",
+        "inputs": ["temple-kit-source", "location-kit-revision-2-source", "compile-location-kits"],
+        "transformation": "compile-location-kits.py",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/temple-optimized.json.gz.b64",
+      "sha256": "a1f0dbd65715b386c323cabe9822a87e331bcac15880ca03f374c2b61e5f5cf9",
+      "gitBlobSha": "a967c77641dba0cb403a241ab2aa32b4764a1552",
+      "entries": [
+        "aqueduct",
+        "broken-column",
+        "carved-ledge",
+        "causeway-0",
+        "causeway-1",
+        "causeway-2",
+        "causeway-3",
+        "distant-sanctuary",
+        "moss-ledge",
+        "river-rock",
+        "supply-chest",
+        "temple-entrance"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-optimized.json.gz.b64",
+        "inputs": ["assets/temple-sprites.json.gz.b64"],
+        "transformation": "src/art/compile-pixel-art.mjs:compileAtlas",
+        "reproduced": true
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/temple-sprites.json.gz.b64",
+      "sha256": "b30f29a597e11bb3fd08a30639d00ce5d1a09e617670c0afd53ab50e89aacf7f",
+      "gitBlobSha": "c919d8be9f9cd7992e234af74996245beb298400",
+      "entries": [
+        "aqueduct",
+        "broken-column",
+        "carved-ledge",
+        "causeway-0",
+        "causeway-1",
+        "causeway-2",
+        "causeway-3",
+        "distant-sanctuary",
+        "moss-ledge",
+        "river-rock",
+        "supply-chest",
+        "temple-entrance"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false
+      },
+      "usage": "released"
+    },
+    {
+      "path": "assets/volcano-sprites.json.gz.b64",
+      "sha256": "6a45903702055a9a45ce6aa5c3a6cfc3d21b16d8d9929f65df310adb5f3bb04d",
+      "gitBlobSha": "9e486a84aea240c90018a2039d5607c6b882c498",
+      "entries": [
+        "armored-gangway",
+        "basalt-boulder",
+        "basalt-ledge",
+        "bridge",
+        "cavern",
+        "furnace",
+        "furnace-vent",
+        "lava-a",
+        "lava-b",
+        "lavafall",
+        "power-terminal",
+        "ruptured-pipe",
+        "slag-pile",
+        "steel-barricade",
+        "truss-catwalk"
+      ],
+      "rightsStatus": "review-required",
+      "license": null,
+      "creator": null,
+      "permissionEvidence": [],
+      "technicalOrigin": {
+        "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/volcano-sprites.json.gz.b64",
+        "inputs": [],
+        "transformation": null,
+        "reproduced": false
+      },
+      "usage": "experimental"
+    }
+  ]
+}
