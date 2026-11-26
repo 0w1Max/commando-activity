@@ -21,7 +21,7 @@ jobs:
       - run: npm run demo
       - run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('generated/commando-activity.svg')"
   visual:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
