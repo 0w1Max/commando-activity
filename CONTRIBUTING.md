@@ -1,7 +1,11 @@
-# Contributing / Участие
+# Contributing
 
-[English development guide](docs/en/DEVELOPMENT.md) · [Разработка на русском](docs/ru/DEVELOPMENT.md)
+**English** · [Русский](CONTRIBUTING.ru.md)
 
-Use a short-lived branch and one focused PR. Explain the problem and resulting behavior. Run `npm test` and `npm run demo`; include live SVG evidence for visual changes. Keep personal portfolio content out of this repository. Preserve the scope of code and asset licenses. Do not include secrets or new artwork without its provenance.
+Start with the [development guide](docs/en/DEVELOPMENT.md) and [architecture](docs/en/ARCHITECTURE.md). Open a focused issue for a behavior change; small fixes can go directly to a PR.
 
-Создавайте короткую ветку и один сфокусированный PR. Объясните проблему и новое поведение. Выполните `npm test` и `npm run demo`; для визуальных изменений покажите живой SVG. Личное портфолио сюда не добавляется. Сохраняйте лицензии; не добавляйте секреты и графику без указанного происхождения.
+Use one short-lived branch and explain the problem, resulting behavior and verification. Preserve seeded RNG order, rendering coordinates and output consistency. Include a regression test for a real defect; do not add tests that merely repeat the implementation. Keep secrets and generated live output out of source commits.
+
+Before review: `npm ci`, `npm run check`, `npm run lint`, `npm run format:check`, `npm test`, `npm run demo`. CI adds Chromium/WebKit comparisons. New artwork needs documented provenance and permission; see [asset rights](ASSET_RIGHTS.md). Use [private reporting](SECURITY.md) for security issues.
+
+This is a small function-based generator. Prefer clear domain boundaries over generic frameworks or layers with no job. Explain non-obvious invariants in comments; omit promotional claims and obsolete experiment notes. English and Russian documentation changes should describe the same behavior and link to the corresponding translated page.

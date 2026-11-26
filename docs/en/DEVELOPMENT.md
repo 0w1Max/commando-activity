@@ -1,43 +1,27 @@
-# Development and maintenance
+# Development
 
-[Русский](../ru/DEVELOPMENT.md)
+**English** · [Русский](../ru/DEVELOPMENT.md)
 
-Use Node.js 22+. `npm test` runs the regression suite; `npm run demo` creates a clearly marked fixture animation in `generated/`. No npm installation or external runtime dependencies are required. Open SVGs in a browser to check animation, not just PNG screenshots.
+Use a recent Node.js 22 LTS patch (or newer). Consumers do not need Node, npm or a fork; these steps are for maintainers.
 
-| Module | Responsibility |
-|---|---|
-| scripts/mission.mjs | Seeded layout, movement, jump clearance, aim geometry and shot timeline |
-| scripts/generate.mjs | GitHub GraphQL, owner/scope checks, calendar normalization and SVG assembly |
-| scripts/*-scene.mjs, *-sprites.mjs | Scene art and local runtime atlases |
-| scripts/level-art.mjs | Platforms, obstacles and shadows |
-| scripts/profile-hud.mjs, hud-font.mjs | Shared typography and month spacing |
-| scripts/daily-location.mjs | Date-based rotation and no-repeat state |
-| scripts/publish-daily.mjs | Publication generation |
-| scripts/output-store.mjs | First output, checksum checks, race protection and atomic commits |
-| scripts/validate-daily.mjs | Production validation |
-| .github/workflows/generate.yml | Reusable publisher; caller context determines the target |
-| .github/workflows/ci.yml | Tests and versioned releases |
+1. Clone this repository and create a short-lived branch.
+2. Run `npm ci` to install locked development tools. Runtime has no npm dependencies.
+3. Run `npm run check`, `npm run lint`, `npm run format:check` and `npm test`.
+4. Run `npm run demo`; open `generated/commando-activity.svg` in a browser. Fixture data is visibly marked and cannot be published as live output.
+5. Open a PR. CI checks both Node logic and browser rendering before a release.
 
-## Stable behavior
+Use `npm run format` for consistent formatting. Comments should explain geometry, security boundaries or non-obvious invariants; avoid narrating ordinary statements. Keep the domain free of filesystem/network imports. See [architecture](ARCHITECTURE.md).
 
-Released locations: desert, industrial, temple, coast. Experimental scenes remain testable, but are not selected by daily publication. `commando-settings.json` keeps the approved seeds and Europe/Moscow cycle. Do not change the seed of a location already published today without an explicit state migration. Same-day reruns keep the selected location; skipped days cannot cause consecutive repeats.
+## Artwork changes
 
-Every released scene uses 1200×469, viewBox `0 -32 1200 469`, 18 px cells at 20 px spacing, grid origin (72,60). Nickname: monospace bold 21 px, baseline -8. Months: monospace bold 15 px, baseline 46. Palettes may vary; viewport, font metrics and coordinates must not. There is no coast-only zoom. Collision footprints must match art and actual jump keyframes; bullets must leave the muzzle and intersect the correct cell.
+Original atlases are `assets/*-sprites.json.gz.b64`. After an approved source edit, run `node scripts/compile-pixel-art.mjs` and commit the matching `*-optimized.json.gz.b64` files. Run `npm run check:art` to verify reproducibility. Do not edit optimized data by hand or change palettes to make a size test pass. Read [asset rights](../../ASSET_RIGHTS.md) first.
 
-## Branches and releases
+## Visual verification
 
-Keep `main` releasable. Create one short-lived branch per change, open a PR, test, merge, and delete the completed branch. A branch is a full repository snapshot, not a folder. Do not use branches as a permanent menu of scene versions. Tags/releases record stable versions; old experiments live in historical archives, not in the default tree.
+CI checks out v2.8.1 as a separate reference and compares all four locations in Chromium and WebKit at 1200px/1× and 390px/3×, including shots, impacts, jumps and restoration. Run `node tools/verify-rendering.cjs PATH_TO_REFERENCE generated/visual-check` to reproduce it after installing the Playwright browsers. `BROWSER_ENGINE=webkit` chooses WebKit. Tiny renderer rounding differences are tolerated; the exact SVG contract test independently protects valid fixture output.
 
-Before releasing, update package/settings/catalog versions together and the pinned source ref in generate.yml and examples/profile-workflow.yml. Test the demo and all four scenes. CI creates a version tag after tests; existing tags are not moved. Consumers explicitly choose when to upgrade. Protect main and require CI in repository settings if your policy allows it; this document does not claim protection has already been configured.
+Real-device feedback remains necessary. Do not equate headless browser checks with a measured iPhone frame rate.
 
-Runtime credentials belong to the caller repository. Never copy or retrieve user PATs into this project. Output is updated without force, with SVG and state in one commit. A failed API request leaves the previous image available. There is no automatic rollback: restore a matched SVG/state pair with a new commit or revert the caller version after a checked migration.
+## Releases
 
-Historical calendars in fixtures are tests only. Source art compilers, rejected fonts and large visual experiments remain in the original v2.7.0 archive; they are not runtime requirements.
-
-## Rendering optimization (2.8.1)
-
-`node scripts/compile-pixel-art.mjs` rebuilds the `*-optimized.json.gz.b64` atlases from the original `*-sprites.json.gz.b64` files. `--check` verifies source consistency. Adjacent same-color pixel rectangles become exact vector contours; colors, holes, coordinates and source artwork are retained. Simple non-rectangular paths are unchanged. There is no rasterization or runtime dependency.
-
-`shot-pool.mjs` reuses effects only after the previous flash, bullet and impact have disappeared. Overlapping effects occupy separate pools. This changes SVG representation, not mission planning, shot timing, player frames, trajectories, calendar or rotation. Test with identical calendars/seeds, at desktop and mobile widths; browser emulation does not establish iPhone FPS.
-
-CI compares all four locations against the v2.8.0 tag in Chromium and WebKit at 1200px/1× and 390px/3×, including flight, impact, jump and restoration frames. QA dependencies are installed separately; consumers need none. `tools/verify-rendering.cjs` can reproduce the comparison with a separate reference checkout.
+See [release policy](RELEASING.md). Never move an existing stable tag. Keep completed work in PR history and tags rather than permanent scene branches. The [migration record](MIGRATION.md) explains the original profile split.

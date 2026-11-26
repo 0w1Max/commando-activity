@@ -2,43 +2,60 @@
 
 **English** · [Русский](README.ru.md)
 
-An animated 8-bit contribution calendar for your GitHub profile. Four themed worlds, a patrolling soldier, jumps, obstacles and synchronized shots — generated from your real GitHub activity.
+Your GitHub contribution calendar, brought to life as an animated pixel-art world.
 
-![Live example](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg)
+[![Checks](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml/badge.svg)](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/0w1Max/commando-activity)](https://github.com/0w1Max/commando-activity/releases/latest)
 
-## Add to your profile
+![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.2)
 
-No fork, server, npm installation or engine files in your profile repository.
+Four rotating locations. A soldier patrols, jumps over obstacles and clears your contribution cells. Generated from your real activity; this is an SVG animation, with no keyboard controls or server to maintain.
 
-1. Add your own classic PAT with **read:user** as the repository secret **COMMANDO_READ_USER_TOKEN**.
-2. Copy [this small workflow](examples/profile-workflow.yml) into `.github/workflows/commando.yml` in your profile repository. Open Actions → Commando Activity → Run workflow.
-3. Add the image to your README, replacing `YOUR_LOGIN`:
+**Current version: 2.8.2.** The mobile optimization introduced in 2.8.1 is retained.
 
-```markdown
-![Commando Activity](https://raw.githubusercontent.com/YOUR_LOGIN/YOUR_LOGIN/output/commando-activity.svg)
-```
+## Add it to your profile
 
-[Detailed installation](docs/en/INSTALL.md) · [Русская инструкция](docs/ru/INSTALL.md) · [Setup assistant source](site/index.html)
+**[Open the setup assistant →](https://0w1max.github.io/commando-activity/?lang=en)**
 
-The workflow reads your calendar, validates the result and updates `output`. Source code stays here; your profile only stores its small caller workflow and generated image. Releases are version pinned; upgrading is an explicit change of the `@v2.8.1` reference.
+Enter your GitHub login. The assistant prepares your workflow and README snippet locally. It never asks for your token.
 
-## Project
+1. Add your own classic PAT with the minimum **read:user** scope as the profile repository secret **COMMANDO_READ_USER_TOKEN**.
+2. Add the generated workflow, run it from Actions, and wait for a successful publication.
+3. Add the generated image snippet to your README.
 
-| Area | Contents |
-|---|---|
-| `scripts/` | Generator, mission planning, rendering and publication |
-| `assets/` | Runtime sprite data only |
-| `tests/`, `fixtures/` | Regression tests and historical test data |
-| `docs/en/`, `docs/ru/` | Separate English and Russian documentation |
-| `examples/` | Minimal integration example |
-| `site/` | Bilingual, local-only setup assistant; never collects tokens |
+No fork, npm installation or game source files in your profile repository. Your existing portfolio stays in place. Installation requires write access to your public `LOGIN/LOGIN` repository and permission to run GitHub Actions.
 
-Node.js 22+: `npm test` and `npm run demo`. No runtime dependencies. This is an SVG animation, not a keyboard-controlled browser game.
+**Artwork notice:** original code is licensed under [MIT](LICENSE-CODE). Rights to some legacy artwork have not been established; that artwork is excluded from the code license. Read [Code and asset rights](ASSET_RIGHTS.md) before redistributing or adapting the graphics.
 
-[Development](docs/en/DEVELOPMENT.md) · [Migration record](docs/en/MIGRATION.md) · [Contributing](CONTRIBUTING.md) · [Changes](CHANGELOG.md)
+## Find your way
 
-Original code has an MIT license with an explicit scope. Some legacy artwork has incomplete provenance and is **not** covered by that grant: read [ASSET_RIGHTS.md](ASSET_RIGHTS.md) before redistributing artwork. This is an independent project, not an official Contra/Konami product.
+| I want to…                      | Start here                                                                      |
+| ------------------------------- | ------------------------------------------------------------------------------- |
+| Install the animation           | [Step-by-step installation](docs/en/INSTALL.md)                                 |
+| Fix a failed run or stale image | [Troubleshooting](docs/en/TROUBLESHOOTING.md)                                   |
+| Understand settings and outputs | [Reference](docs/en/REFERENCE.md)                                               |
+| Understand the architecture     | [Architecture](docs/en/ARCHITECTURE.md)                                         |
+| Develop or contribute           | [Development](docs/en/DEVELOPMENT.md) · [Contributing](CONTRIBUTING.md)         |
+| Review changes and limitations  | [Changelog](CHANGELOG.md) · [Audit](docs/en/AUDIT.md) · [Security](SECURITY.md) |
+
+## How it works
+
+GitHub Actions reads your calendar, builds a deterministic mission, renders a self-contained SVG and commits the image and state together to your profile's `output` branch. The example refreshes twice daily. GitHub scheduling and image caching can delay updates.
+
+Your profile contains a small version-pinned caller workflow and generated output. Source code lives here. Updates are explicit: review a release and change the caller's `@v…` reference. Existing release tags are not moved.
+
+| Directory                 | Purpose                                            |
+| ------------------------- | -------------------------------------------------- |
+| `src/domain/`             | Pure layout, movement, aiming and target selection |
+| `src/calendar/`           | Calendar validation and GitHub transport           |
+| `src/art/`, `src/render/` | Pixel artwork and SVG assembly                     |
+| `src/publication/`        | Rotation, output checks and atomic persistence     |
+| `scripts/`                | Small command-line entrypoints                     |
+| `site/`                   | English/Russian setup assistant                    |
+| `tests/`, `tools/`        | Regression tests and repository checks             |
 
 ## Acknowledgements
 
 Commando Activity was inspired by [pacman-contribution-graph](https://github.com/abozanona/pacman-contribution-graph) and its idea of turning the GitHub contribution calendar into a game animation.
+
+Independent project; not an official Contra/Konami product.
