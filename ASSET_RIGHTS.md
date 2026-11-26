@@ -14,3 +14,7 @@ The MIT grant in [LICENSE-CODE](LICENSE-CODE) covers original project code under
 This is an independent project, not an official Contra or Konami product. Referencing a game style does not establish permission to redistribute its original artwork. A public GitHub repository and the ability to fork are not a blanket artwork license.
 
 The installation guide describes a technical reuse path. For a broadly redistributed or commercial artwork bundle, first establish the source/license of every graphic or substitute artwork you own or have permission to use. No claim of completed rights clearance is made by the current release. Optimized vector atlases remain derived artwork with the same unresolved provenance.
+
+## Provenance review
+
+See the [dated artwork review](docs/en/ARTWORK.md) and [file inventory](compliance/artwork-manifest.json). Four terrain atlases have been reproduced from archived PNGs; all 19 packed atlas files still require rights review. Technical reproduction is not permission.
