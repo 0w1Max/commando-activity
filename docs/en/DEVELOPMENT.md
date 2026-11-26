@@ -33,3 +33,11 @@ Before releasing, update package/settings/catalog versions together and the pinn
 Runtime credentials belong to the caller repository. Never copy or retrieve user PATs into this project. Output is updated without force, with SVG and state in one commit. A failed API request leaves the previous image available. There is no automatic rollback: restore a matched SVG/state pair with a new commit or revert the caller version after a checked migration.
 
 Historical calendars in fixtures are tests only. Source art compilers, rejected fonts and large visual experiments remain in the original v2.7.0 archive; they are not runtime requirements.
+
+## Rendering optimization (2.8.1)
+
+`node scripts/compile-pixel-art.mjs` rebuilds the `*-optimized.json.gz.b64` atlases from the original `*-sprites.json.gz.b64` files. `--check` verifies source consistency. Adjacent same-color pixel rectangles become exact vector contours; colors, holes, coordinates and source artwork are retained. Simple non-rectangular paths are unchanged. There is no rasterization or runtime dependency.
+
+`shot-pool.mjs` reuses effects only after the previous flash, bullet and impact have disappeared. Overlapping effects occupy separate pools. This changes SVG representation, not mission planning, shot timing, player frames, trajectories, calendar or rotation. Test with identical calendars/seeds, at desktop and mobile widths; browser emulation does not establish iPhone FPS.
+
+CI compares all four locations against the v2.8.0 tag in Chromium and WebKit at 1200px/1× and 390px/3×, including flight, impact, jump and restoration frames. QA dependencies are installed separately; consumers need none. `tools/verify-rendering.cjs` can reproduce the comparison with a separate reference checkout.

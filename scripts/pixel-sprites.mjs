@@ -1,8 +1,9 @@
 import {readFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
+import {OPTIMIZED_ATLASES} from './compile-pixel-art.mjs';
 
 export function loadPixelSprites(biome) {
-  const encoded = readFileSync(new URL(`../assets/${biome}-sprites.json.gz.b64`, import.meta.url), 'utf8');
+  const encoded = readFileSync(new URL(`../assets/${biome}-${OPTIMIZED_ATLASES.includes(biome)?'optimized':'sprites'}.json.gz.b64`, import.meta.url), 'utf8');
   const atlas = JSON.parse(gunzipSync(Buffer.from(encoded, 'base64')).toString('utf8'));
   const symbols = Object.fromEntries(Object.entries(atlas).map(([name, [width, height, paths]]) => [
     name,

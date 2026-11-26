@@ -20,7 +20,7 @@ No fork, server, npm installation or engine files in your profile repository.
 
 [Detailed installation](docs/en/INSTALL.md) · [Русская инструкция](docs/ru/INSTALL.md) · [Setup assistant source](site/index.html)
 
-The workflow reads your calendar, validates the result and updates `output`. Source code stays here; your profile only stores its small caller workflow and generated image. Releases are version pinned; upgrading is an explicit change of the `@v2.8.0` reference.
+The workflow reads your calendar, validates the result and updates `output`. Source code stays here; your profile only stores its small caller workflow and generated image. Releases are version pinned; upgrading is an explicit change of the `@v2.8.1` reference.
 
 ## Project
 
