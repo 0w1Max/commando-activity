@@ -5,6 +5,7 @@ import {gunzipSync} from 'node:zlib';
 import {normalizeWeeks,renderSvg} from '../scripts/generate.mjs';
 import {LOCATION_POOL,selectLocation,renderLocation} from '../scripts/locations.mjs';
 import {buildLevel,createMission,WORLD,hpForLevel,firstLiveIntersection,aimGeometry,OBSTACLE_POOL,PLATFORM_POOL,randomCount,pickUnique,validateLayout} from '../scripts/mission.mjs';
+import {allocateShotPools} from '../scripts/shot-pool.mjs';
 import {levelMarkup} from '../scripts/level-art.mjs';
 import {BIOMES,biomeFor,soldierColor} from '../scripts/biomes.mjs';
 
@@ -18,6 +19,7 @@ const sprites=await loadCompressedJson('assets/sprites.json.gz.b64');
 const grid=normalizeWeeks(fixture.weeks);
 const level=buildLevel(grid,'0w1Max');
 const mission=createMission(grid,level);
+const emittedShots=svg=>[...svg.matchAll(/data-shots="([^"]+)"/g)].flatMap(m=>m[1].split(' ')).length;
 const active=grid.flat().filter(d=>d && d.level>0).length;
 const totalHp=grid.flat().reduce((sum,d)=>sum+hpForLevel(d?.level??0),0);
 
@@ -166,10 +168,10 @@ test('Недопустимое число недель блокируется',(
 
 test('SVG включает карты, преграды, прицельные пули и финальную зачистку',()=>{
   const svg=renderSvg({weeks:fixture.weeks,sprites,username:'0w1Max',fixture:true});
-  for(const token of ['blue-commando','soldier-shoot-stand','repeatCount="indefinite"','DEMO / TEST DATA','Aimed shot 1','procedural-level','mission-complete']){
+  for(const token of ['blue-commando','soldier-shoot-stand','repeatCount="indefinite"','DEMO / TEST DATA','Pooled aimed shots','procedural-level','mission-complete']){
     assert.ok(svg.includes(token),`Не найден SVG-маркер ${token}`);
   }
-  assert.equal((svg.match(/id="shot-\d+"/g)||[]).length,totalHp);
+  assert.equal(emittedShots(svg),totalHp);
   assert.equal((svg.match(/<rect x="[0-9]+" y="[0-9]+" width="18" height="18"/g)||[]).length,grid.flat().filter(Boolean).length);
 });
 
@@ -248,13 +250,13 @@ test('SVG содержит промежуточное потускнение и 
   const svg=renderSvg({weeks:fixture.weeks,sprites,username:'0w1Max',fixture:true});
   assert.match(svg,/attributeName="fill"/);
   assert.match(svg,/attributeName="opacity"/);
-  assert.equal((svg.match(/id="shot-\d+"/g)||[]).length,totalHp);
+  assert.equal(emittedShots(svg),totalHp);
 });
 
 test('Вспышка создаётся в точке дула и не задваивается кадром shoot-stand',()=>{
   const svg=renderSvg({weeks:fixture.weeks,sprites,username:'0w1Max',fixture:true});
-  assert.equal((svg.match(/class="muzzle-flash"/g)||[]).length,totalHp);
-  assert.equal((svg.match(/class="bullet"/g)||[]).length,totalHp);
+  assert.equal((svg.match(/class="muzzle-flash"/g)||[]).length,allocateShotPools(mission.shots).length);
+  assert.equal((svg.match(/class="bullet"/g)||[]).length,allocateShotPools(mission.shots).length);
   assert.match(svg,/href="#fx-muzzle"/);
   assert.doesNotMatch(svg,/<use href="#soldier-shoot-stand"/);
   assert.match(svg,/id="aim-upper"/);
@@ -266,8 +268,8 @@ test('Различаются короткие попадания и полноц
   const svg=renderSvg({weeks:fixture.weeks,sprites,username:'0w1Max',fixture:true});
   const destroyed=mission.shots.filter(s=>s.finalHit).length;
   assert.equal(destroyed,active);
-  assert.equal((svg.match(/href="#fx-impact-break"/g)||[]).length,destroyed);
-  assert.equal((svg.match(/href="#fx-impact-damage"/g)||[]).length,totalHp-destroyed);
+  assert.equal((svg.match(/href="#fx-impact-break"/g)||[]).length,allocateShotPools(mission.shots).filter(p=>p.finalHit).length);
+  assert.equal((svg.match(/href="#fx-impact-damage"/g)||[]).length,allocateShotPools(mission.shots).filter(p=>!p.finalHit).length);
   assert.match(svg,/id="fx-impact-break"/);
   assert.match(svg,/type="scale" calcMode="linear"/);
 });
@@ -360,7 +362,7 @@ test('SVG плавно восстанавливает клетки и не те�
   assert.match(svg,/attributeName="opacity" calcMode="linear"/);
   // Отказ от принудительной замены последней позиции в рендере.
   assert.match(svg,/id="blue-commando"/);
-  assert.equal((svg.match(/id="shot-\d+"/g)||[]).length,totalHp);
+  assert.equal(emittedShots(svg),totalHp);
 });
 
 
@@ -438,7 +440,8 @@ test('Неактивные дни почти прозрачные, активн�
   const cells=svg.split('<g id="contribution-grid">')[1]?.split('</g>')[0];
   assert.ok(cells,'SVG должен содержать поле активности');
   const empty=[...cells.matchAll(/<rect\b[^>]*fill="#a8bcc4"[^>]*>/g)].map(m=>m[0]);
-  const active=[...cells.matchAll(/<rect\b[^>]*fill="#(?:166f43|22a857|3dd96b|b7ff63)"[^>]*>/g)].map(m=>m[0]);
+  const emittedShots=svg=>[...svg.matchAll(/data-shots="([^"]+)"/g)].flatMap(m=>m[1].split(' ')).length;
+const active=[...cells.matchAll(/<rect\b[^>]*fill="#(?:166f43|22a857|3dd96b|b7ff63)"[^>]*>/g)].map(m=>m[0]);
   assert.ok(empty.length>0,'В демо должны быть пустые дни');
   assert.ok(active.length>0,'В демо должны быть активные дни');
   assert.ok(empty.every(tag=>tag.includes('fill-opacity="0.22"')),'Пустые клетки должны быть прозрачными на 78%');
@@ -723,7 +726,7 @@ test('Вулкан: автономный SVG сохраняет цикл бой�
   assert.ok(player);
   assert.equal(player[1],player[2]);
   assert.doesNotMatch(svg,/desert-end-zone|desert-victory-flag|STAGE CLEAR|<image\b|data:image\//);
-  assert.equal((svg.match(/id="shot-\d+"/g)||[]).length,plan.totalHp);
+  assert.equal(emittedShots(svg),plan.totalHp);
   assert.equal(plan.segments.at(-1).x1,plan.initial.x);
   assert.equal(plan.segments.at(-1).y1,plan.initial.footY);
   for(const another of [0,1,3,7]){
@@ -868,7 +871,7 @@ test('Побережье: единый масштаб завода сохран�
   assert.match(coastSvg,/width="18" height="18" rx="3"/);
   assert.match(coastSvg,/id="blue-commando"/);
   assert.match(coastSvg,/id="fx-muzzle"/);
-  assert.equal((coastSvg.match(/id="shot-\d+"/g)||[]).length,plan.totalHp);
+  assert.equal(emittedShots(coastSvg),plan.totalHp);
   assert.match(coastSvg,/id="storm-coast-victory"/);
   assert.match(coastSvg,/STORM COAST/);
   assert.match(coastSvg,/GAME OVER/);

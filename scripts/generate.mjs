@@ -21,6 +21,7 @@ import { levelMarkup } from './level-art.mjs';
 import {soldierColor} from './biomes.mjs';
 import {HUD,monthLabels} from './profile-hud.mjs';
 import {hudText} from './hud-font.mjs';
+import {pooledBulletMarkup} from './shot-pool.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const USERNAME = process.env.GITHUB_USER || '0w1Max';
@@ -160,43 +161,6 @@ function effectsDefs(canyon){
   </g>`;
 }
 
-function bulletMarkup(mission){
-  const duration=mission.duration;
-  return mission.shots.map((s,i)=>{
-    const dx=s.x-s.origin.x,dy=s.y-s.origin.y,dist=Math.hypot(dx,dy);
-    const angle=Math.atan2(dy,dx)*180/Math.PI;
-    const opacity=animationAttr('opacity',
-      [0,Math.max(0,s.start-.0004),s.start,s.impact,Math.min(duration,s.impact+.001),duration],
-      ['0','0','1','1','0','0'],duration);
-    const slide=`<animateTransform attributeName="transform" type="translate" calcMode="linear"
-      keyTimes="${[0,s.start,s.impact,duration].map(t=>keyPct(t,duration)).join(';')}"
-      values="0 0;0 0;${fmt(dist)} 0;${fmt(dist)} 0" dur="${fmt(duration)}s" repeatCount="indefinite"/>`;
-    const flash=animationAttr('opacity',
-      [0,Math.max(0,s.start-.0004),s.start,Math.min(duration,s.start+.048),duration],
-      ['0','0','1','0','0'],duration,'linear');
-    const fxLength=s.finalHit?.24:.105;
-    const impactTimes=[0,Math.max(0,s.impact-.0004),s.impact,Math.min(duration,s.impact+fxLength),duration];
-    const impactOpacity=animationAttr('opacity',impactTimes,['0','0','1','0','0'],duration,'linear');
-    const stages=[0,Math.max(0,s.impact-.0004),s.impact,
-      Math.min(duration,s.impact+fxLength*.28),Math.min(duration,s.impact+fxLength),duration];
-    const scales=s.finalHit?['.2','.2','.45','1','1.5','1.5']:['.4','.4','.65','1','1.15','1.15'];
-    const scaleAnimation=`<animateTransform attributeName="transform" type="scale" calcMode="linear"
-      keyTimes="${stages.map(t=>keyPct(t,duration)).join(';')}"
-      values="${scales.join(';')}" dur="${fmt(duration)}s" repeatCount="indefinite"/>`;
-    return `<g id="shot-${i+1}" aria-label="Aimed shot ${i+1}">
-      <g id="shot-${i+1}-muzzle" transform="translate(${fmt(s.origin.x)} ${fmt(s.origin.y)}) rotate(${fmt(angle)})">
-        <g class="muzzle-flash" opacity="0">${flash}<use href="#fx-muzzle"/></g>
-        <g class="bullet" opacity="0">${opacity}
-          <g>${slide}<rect x="-12" y="-2" width="9" height="4" fill="#ffd96d"/>
-            <rect x="-3" y="-2" width="4" height="4" fill="#fff4ac"/></g>
-        </g>
-      </g>
-      <g id="shot-${i+1}-impact" transform="translate(${fmt(s.x)} ${fmt(s.y)})" opacity="0">${impactOpacity}
-        <g>${scaleAnimation}<use href="#fx-impact-${s.finalHit?'break':'damage'}"/></g>
-      </g>
-    </g>`;
-  }).join('');
-}
 
 function spriteDefs(sprites,location) {
   let out='';
@@ -354,7 +318,7 @@ export function renderSvg({weeks,sprites,username,fixture=false,seedOverride,loc
     ? renderGameOver(level.location,{duration:missionEnd,finishedAt,fadeBegin}) : defaultVictory;
   const done=`<g id="mission-complete" opacity="0">${missionComplete}${victoryArt}</g>`;
   const indicator=fixture?`<text x="1118" y="20" text-anchor="end" font-family="monospace" font-size="13" fill="#fcd34d">DEMO / TEST DATA</text>`:'';
-  const gameBody=`${scene}${top}${indicator}${levelMarkup(level)}${playerMarkup(mission)}${bulletMarkup(mission)}${done}`;
+  const gameBody=`${scene}${top}${indicator}${levelMarkup(level)}${playerMarkup(mission)}${pooledBulletMarkup(mission)}${done}`;
   const headerFill=({industrial:'#476b70',desert:'#6197ac',temple:'#609697',coast:'#527c89',jungle:'#0d2630',volcano:'#080507'})[level.location]??'#102b35';
   return `${header}${defs}<rect id="hud-headroom" x="0" y="${-headerRoom}" width="${WORLD.width}" height="${headerRoom}" fill="${headerFill}"/>${gameBody}</svg>\n`;
 }

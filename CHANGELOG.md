@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.1 — 2026-11-26
+
+- Reuse shot/effect elements after their visible intervals instead of allocating a full animation set per shot. Mission planning, timing, trajectories and player frames are unchanged.
+- Merge adjacent same-color pixel rectangles into exact vector contours; keep original source atlases. No rasterization, palette reduction or runtime dependencies.
+- Preserve dimensions, palettes, transparency, procedural layouts, HUD and daily rotation. Add source/compiled consistency and overlapping-effect regression checks.
+
+
 ## 2.8.0 — 2026-11-24
 
 - Extracted the game from the author's profile into a standalone project.
