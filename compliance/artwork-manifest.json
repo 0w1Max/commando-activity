@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "reviewedOn": "2026-11-27",
   "baselineCommit": "428ca588364a42cbefabf8c360959f42fb656548",
-  "scope": "Every file in assets/. Generator code is MIT; this manifest does not grant rights to its artwork inputs or generated SVG derivatives. Native monospace is a system font, not a bundled font file.",
+  "scope": "Original project artwork: all files in assets/, seven archived PNG source images and original graphical elements emitted by the generator are dedicated under CC0-1.0 within LICENSE-ASSETS. Source code remains MIT within LICENSE-CODE. Native monospace is a system font; third-party materials and user/calendar data are excluded.",
   "evidence": [
     {
       "id": "coast-kit-source",
@@ -10,11 +10,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/coast-kit-source.png",
       "sha256": "31beca0d19b480ac87a1cf6b3b15871869ff242276b477a7e3bff05c4e3bf1f7",
       "gitBlobSha": "5af6f95eb8450d9f892fc2b8f62051126a6ab9ca",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "desert-canyon-background",
@@ -22,11 +23,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/desert-canyon-background.png",
       "sha256": "507eace3897cda3c5cf677dd750d2409d26622fe4cfb39e877469eda6ac8fe79",
       "gitBlobSha": "0889570389c6e47a433087ffcc92d0788787bd0f",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "desert-kit-source",
@@ -34,11 +36,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/desert-kit-source.png",
       "sha256": "c63a647d6a14fd1806124a184d6a254e9cda763462aaa36b95c44ccb715e4385",
       "gitBlobSha": "117ac056a5777463423da1e9bdd27ac6a510f37e",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "factory-v8-small-source",
@@ -46,11 +49,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/factory-v8-small-source.png",
       "sha256": "b8ae243eea009f9091c491b138682ed7df08f6d43878db969425fd5588dd3c69",
       "gitBlobSha": "384e9c4936929961cc0075397e6e8967ea4e1a44",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "factory-v8-source",
@@ -58,11 +62,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/factory-v8-source.png",
       "sha256": "71c1363c791f8a97e3f9b5723a9dd06223c1c745eeb8da8c80c3f15802fa64d0",
       "gitBlobSha": "c07b5175504b4f7d4450d9ede5bba6e690b3f591",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "location-kit-revision-2-source",
@@ -70,11 +75,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/location-kit-revision-2-source.png",
       "sha256": "9072af857fdce1ba0ab31b2f6556fc8e7b9ca8100ceb9b1626436039523b5e62",
       "gitBlobSha": "8a7b575d1eec2142e7106d27a616b9e6eb9cc05c",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "temple-kit-source",
@@ -82,11 +88,12 @@
       "url": "https://github.com/0w1Max/0w1Max/blob/bf8f10350b0c82fa2e651b318b8b83298d821a36/assets/temple-kit-source.png",
       "sha256": "c229623c3cb0266a0ae7853e4072bcad24adf2673080e2126c3794d14e6fbd65",
       "gitBlobSha": "97dd2b55fcd507950c34850d1801e71ddb531e5e",
-      "creator": null,
+      "creator": "0w1Max (AI-assisted original project artwork)",
       "generator": null,
-      "license": null,
-      "rightsStatus": "license-pending",
-      "originDeclaration": "project-owner-2026-11-27"
+      "license": "CC0-1.0",
+      "rightsStatus": "owner-licensed",
+      "originDeclaration": "project-owner-2026-11-27",
+      "permissionEvidence": ["https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"]
     },
     {
       "id": "compile-factory-concept",
@@ -117,10 +124,12 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-kit-optimized.json.gz.b64",
         "inputs": ["assets/coast-kit-sprites.json.gz.b64"],
@@ -143,10 +152,12 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-kit-sprites.json.gz.b64",
         "inputs": ["coast-kit-source", "location-kit-revision-2-source", "compile-location-kits"],
@@ -174,10 +185,12 @@
         "stone-shelf",
         "timber-span"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-optimized.json.gz.b64",
         "inputs": ["assets/coast-sprites.json.gz.b64"],
@@ -205,10 +218,12 @@
         "stone-shelf",
         "timber-span"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/coast-sprites.json.gz.b64",
         "inputs": [],
@@ -231,10 +246,12 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-kit-optimized.json.gz.b64",
         "inputs": ["assets/desert-kit-sprites.json.gz.b64"],
@@ -257,10 +274,12 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-kit-sprites.json.gz.b64",
         "inputs": ["desert-kit-source", "location-kit-revision-2-source", "compile-location-kits"],
@@ -294,10 +313,12 @@
         "sandstone-shelf",
         "west-mesa"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-optimized.json.gz.b64",
         "inputs": ["assets/desert-sprites.json.gz.b64"],
@@ -331,10 +352,12 @@
         "sandstone-shelf",
         "west-mesa"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/desert-sprites.json.gz.b64",
         "inputs": [],
@@ -362,10 +385,12 @@
         "service-deck-2",
         "service-deck-3"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-optimized.json.gz.b64",
         "inputs": ["assets/factory-sprites.json.gz.b64"],
@@ -391,10 +416,12 @@
         "service-deck-2",
         "service-deck-3"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-sprites.json.gz.b64",
         "inputs": [],
@@ -417,10 +444,12 @@
         "stopped-conveyor",
         "toolbox"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-v8-optimized.json.gz.b64",
         "inputs": ["assets/factory-v8-sprites.json.gz.b64"],
@@ -443,10 +472,12 @@
         "stopped-conveyor",
         "toolbox"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/factory-v8-sprites.json.gz.b64",
         "inputs": ["factory-v8-source", "factory-v8-small-source", "compile-factory-concept"],
@@ -475,10 +506,12 @@
         "wild-undergrowth",
         "wild-waterfall-cliff"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/jungle-sprites.json.gz.b64",
         "inputs": [],
@@ -510,10 +543,12 @@
         "shoot-run-b",
         "shoot-stand"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/sprites.json.gz.b64",
         "inputs": [],
@@ -536,10 +571,12 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-kit-optimized.json.gz.b64",
         "inputs": ["assets/temple-kit-sprites.json.gz.b64"],
@@ -562,10 +599,12 @@
         "platform-1",
         "platform-2"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-kit-sprites.json.gz.b64",
         "inputs": ["temple-kit-source", "location-kit-revision-2-source", "compile-location-kits"],
@@ -593,10 +632,12 @@
         "supply-chest",
         "temple-entrance"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-optimized.json.gz.b64",
         "inputs": ["assets/temple-sprites.json.gz.b64"],
@@ -624,10 +665,12 @@
         "supply-chest",
         "temple-entrance"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/temple-sprites.json.gz.b64",
         "inputs": [],
@@ -658,10 +701,12 @@
         "steel-barricade",
         "truss-catwalk"
       ],
-      "rightsStatus": "license-pending",
-      "license": null,
-      "creator": null,
-      "permissionEvidence": [],
+      "rightsStatus": "owner-licensed",
+      "license": "CC0-1.0",
+      "creator": "0w1Max (AI-assisted original project artwork)",
+      "permissionEvidence": [
+        "https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS"
+      ],
       "technicalOrigin": {
         "url": "https://github.com/0w1Max/commando-activity/blob/428ca588364a42cbefabf8c360959f42fb656548/assets/volcano-sprites.json.gz.b64",
         "inputs": [],
@@ -680,6 +725,16 @@
     "scope": "All project artwork, including the character, backgrounds and terrain",
     "statement": "The artwork was created from scratch in collaboration with the assistant.",
     "evidenceType": "owner-statement",
-    "publicArtworkLicense": null
+    "publicArtworkLicense": "CC0-1.0",
+    "licenseAppliedOn": "2026-11-27"
+  },
+  "artworkLicense": {
+    "spdxId": "CC0-1.0",
+    "scopeFile": "LICENSE-ASSETS",
+    "scopeSha256": "f9d1af0ccc8f06508a6ab922ab620849c458d8a81cf4819a961a59cf9372a6fc",
+    "legalCode": "LICENSES/CC0-1.0.txt",
+    "legalCodeSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "canonicalUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "appliedOn": "2026-11-27"
   }
 }

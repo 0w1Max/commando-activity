@@ -7,11 +7,11 @@ Your GitHub contribution calendar, brought to life as an animated pixel-art worl
 [![Checks](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml/badge.svg)](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/0w1Max/commando-activity)](https://github.com/0w1Max/commando-activity/releases/latest)
 
-![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.3)
+![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.4)
 
 Four rotating locations. A soldier patrols, jumps over obstacles and clears your contribution cells. Generated from your real activity; this is an SVG animation, with no keyboard controls or server to maintain.
 
-**Current version: 2.8.3.** The mobile optimization introduced in 2.8.1 is retained.
+**Current version: 2.8.4.** The mobile optimization introduced in 2.8.1 is retained.
 
 ## Add it to your profile
 
@@ -25,7 +25,7 @@ Enter your GitHub login. The assistant prepares your workflow and README snippet
 
 No fork, npm installation or game source files in your profile repository. Your existing portfolio stays in place. Installation requires write access to your public `LOGIN/LOGIN` repository and permission to run GitHub Actions.
 
-**Artwork notice:** original code is licensed under [MIT](LICENSE-CODE). The owner confirms that the artwork was created from scratch with the assistant; its separate public license is pending and it is excluded from the code license. Read [Code and asset rights](ASSET_RIGHTS.md) before redistributing or adapting the graphics.
+**Licenses:** code — [MIT](LICENSE-CODE); original artwork — [CC0 1.0](LICENSE-ASSETS), with no mandatory attribution. [Scope and exclusions](ASSET_RIGHTS.md).
 
 ## Find your way
 

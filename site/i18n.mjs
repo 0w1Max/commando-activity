@@ -25,7 +25,7 @@ export const translations = {
       'Your calendar refreshes twice daily. GitHub may cache the image or delay scheduled runs.',
     guide: 'Detailed guide',
     rights:
-      'Original code and legacy artwork have separate rights. See ASSET_RIGHTS.md before redistributing artwork.',
+      'Code: MIT. Original artwork: CC0 1.0, no mandatory attribution. See ASSET_RIGHTS.md for scope.',
     invalid: 'Check the GitHub username and branch.',
     copied: 'Copied.',
     copyFailed: 'Select the text and copy it manually.',
@@ -56,7 +56,7 @@ export const translations = {
       'Календарь обновляется дважды в сутки. Возможны кеш картинки и задержки расписания GitHub.',
     guide: 'Подробная инструкция',
     rights:
-      'У оригинального кода и старой графики разные права. Перед распространением ресурсов прочитай ASSET_RIGHTS.md.',
+      'Код: MIT. Оригинальная графика: CC0 1.0, без обязательного указания авторства. Область — в ASSET_RIGHTS.md.',
     invalid: 'Проверь логин GitHub и имя ветки.',
     copied: 'Скопировано.',
     copyFailed: 'Выдели текст и скопируй вручную.',

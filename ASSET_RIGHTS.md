@@ -1,19 +1,15 @@
-# Code and asset rights
+# Code and artwork rights
 
 **English** · [Русский](ASSET_RIGHTS.ru.md)
 
-The project owner confirmed on 27 November 2026 that the character, backgrounds, obstacles and platforms were created from scratch in collaboration with the assistant. This is recorded as an owner declaration in the [artwork inventory](compliance/artwork-manifest.json). Missing earlier records are not evidence that artwork was copied from another game.
+Original code, workflows and documentation use [MIT](LICENSE-CODE). Original project artwork is dedicated under [CC0 1.0 Universal](LICENSE-ASSETS); its [unmodified legal code](LICENSES/CC0-1.0.txt) is included.
 
-| Resource                                    | Terms                                                                                                |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Original code, workflows and documentation  | MIT within the scope of [LICENSE-CODE](LICENSE-CODE)                                                 |
-| Original artwork and its vector derivatives | Original creation declared by the owner; a separate public artwork license has not yet been selected |
-| Native monospace HUD                        | System font; no font file bundled                                                                    |
-| Archived font experiments                   | Outside this product tree; historical OFL notices remain applicable                                  |
-| Third-party names, marks or logos           | Not licensed by the project's code or artwork terms                                                  |
+You may copy, modify and reuse the artwork, including commercially, without mandatory attribution. Credit to Commando Activity is welcome. CC0 requires neither payment nor separate permission from the owner.
 
-The artwork remains outside the code's MIT grant. The remaining publishing decision is its explicit public reuse license; no replacement is planned merely because earlier source notes were incomplete. The owner declaration is not a guarantee of copyrightability or an independent legal certification.
+Scope: original characters, backgrounds, obstacles, platforms, decorations, end screens and their vector derivatives; the [inventory](compliance/artwork-manifest.json) identifies 19 packed atlas files and seven archived PNGs by hash. Those original visual elements in generated SVGs are included too.
 
-See [artwork provenance and licensing](docs/en/ARTWORK.md) for the recovered sources, verified compilation chain and procedure for future contributions. Optimizing a vector atlas does not change the underlying artwork's terms. Generated profile SVGs and previews contain the same artwork.
+The owner confirms creation from scratch with the assistant and applies CC0 to rights they hold. This is an owner declaration, not an independent legal certification or a claim of exclusive copyright in every AI-assisted element. The dedication is permanent and irrevocable to the extent provided by CC0; no warranties are given.
 
-This is an independent project, not an official Contra/Konami product. No rights to another game's original artwork or trademarks are granted.
+Excluded: third-party marks, logos, materials, archived fonts with their own licenses, user names, personal data and contribution calendars. The native monospace HUD bundles no font file. Historical OFL notices for font experiments remain applicable.
+
+See [artwork provenance and checks](docs/en/ARTWORK.md). Atlas optimization does not change the source artwork terms. This independent project grants no rights to Contra/Konami artwork or trademarks.

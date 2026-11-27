@@ -23,3 +23,5 @@ Consumer contracts are the reusable workflow, documented CLI, output filenames/s
 GitHub Releases is the distribution record. `commando-release.json` records current metadata and historical artwork provenance; it must not be confused with a tag SHA. For a rollback, choose a known-good release and restore a matched image/state pair through a checked publication; no automatic rollback is promised.
 
 2.8.3 adds provenance integrity checks and protection setup documentation without changing rendering. Artwork clearance and activation of administrator settings remain separate acceptance criteria; neither is implied by a release tag.
+
+Version 2.8.4 is a patch release for artwork licensing and documentation. Code remains MIT, original artwork uses CC0 1.0; graphics, motion and mobile optimization are preserved.
