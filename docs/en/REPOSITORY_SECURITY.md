@@ -4,9 +4,18 @@
 
 ## Observed state — 27 November 2026
 
-Both public repository ruleset lists were empty. The branch API reported `protected: false` for product `main` and profile `main`/`output`. The integration rejected detailed legacy protection reads with `403 Resource not accessible by integration`; this is an access limitation, not a clean security result. Secret scanning alert settings, push protection and private reporting have not been verified. The cloud browser was signed out; no administrator settings were changed.
+Active rulesets protect `main` and release tags matching `v*`. Changes to `main` require a pull request, passing `test` and `visual` checks from GitHub Actions, and an up-to-date base. Review conversations must be resolved. Deletion and force pushes to `main` are blocked. Existing release tags cannot be updated or deleted; new tags can be created. No approving review from a second contributor is required. Both rulesets have empty bypass lists.
 
-The prepared JSON files below are **disabled drafts**, not enabled protections. They do not introduce bypass actors or change credentials. Review and activate each in its intended repository. GitHub supports JSON import through Settings → Rules → Rulesets → New ruleset → Import a ruleset; labels may change.
+- [Main ruleset](https://github.com/0w1Max/commando-activity/rules/28206297): **Active**, targeting only `refs/heads/main`; required checks come from GitHub Actions app ID `15368`.
+- [Published-tag ruleset](https://github.com/0w1Max/commando-activity/rules/28206421): **Active**, targeting `refs/tags/v*`; creation is unrestricted.
+
+Ruleset settings were verified through the GitHub API on 27 November 2026. Owner-provided GitHub screenshots on the same date show Secret Protection enabled, Push protection On, and Private vulnerability reporting enabled in `0w1Max/commando-activity`. Secret scanning shows **0 open alerts** in both the product and profile repositories. This is a dated observation of reported alerts, not proof that no secret could exist.
+
+The profile repository `0w1Max/0w1Max` is separate: its ruleset list remains empty, and no profile branch rules were enabled in this work. The profile screenshots confirm 0 open secret-scanning alerts; its Secret Protection, Push protection and private-reporting switches were not separately verified.
+
+The product settings screenshot also shows Dependency graph, Dependabot alerts and Dependabot security updates **Off**. This work does not claim those features are enabled; the existing Dependabot version-update workflow is a separate mechanism.
+
+The prepared JSON files below are **disabled drafts**, not enabled protections. They do not introduce bypass actors or change credentials. The product protections listed above are already active; do not import duplicate rulesets. Profile drafts are optional examples and have not been activated. For a new installation, review the intended targets before activation. GitHub supports JSON import through Settings → Rules → Rulesets → New ruleset → Import a ruleset; labels may change.
 
 | Repository                 | Draft                                                              | Protection when activated                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -15,7 +24,7 @@ The prepared JSON files below are **disabled drafts**, not enabled protections. 
 | `0w1Max/0w1Max`            | [profile-main.json](../../examples/rulesets/profile-main.json)     | PR required for profile source; block deletion and force push; no nonexistent PR checks required                                                        |
 | `0w1Max/0w1Max`            | [profile-output.json](../../examples/rulesets/profile-output.json) | Block deletion and force push of `output`; allow normal automated commits                                                                               |
 
-## Apply and verify
+## Reuse templates and verify changes
 
 1. Save/export existing settings before changing them. Import one draft into the exact repository named in the table, and inspect its target refs and rules.
 2. For product `main`, confirm the required names are exactly `test` and `visual`. These currently run from GitHub Actions app ID `15368`. Do not require the `release` job: it runs after merging, not on PRs.
@@ -27,12 +36,12 @@ No second human approval is required: the owner can merge their own checked PR. 
 
 ## Other administrator settings
 
-- In Settings → Advanced Security, inspect available Secret Protection/secret-scanning alerts and push protection. Public scanning and owner-visible alerts are distinct settings; do not assume their status from the presence of a policy file.
-- Enable **Private vulnerability reporting**, then verify Security → Advisories shows **Report a vulnerability** to an eligible viewer. Never submit a real token in a test report.
-- Keep Dependabot alerts/updates available. Review its PRs through normal CI; dependency upgrades are not automatic approval.
+- Product Secret Protection, Push protection and private reporting are enabled according to the dated owner screenshots above. Review their current state in Settings → Advanced Security before recording future changes; a policy file alone does not enable them.
+- Use Security → Advisories for private vulnerability reports. The owner-facing settings screenshot confirms enablement; the separate researcher-facing reporting button was not independently tested. No test report or real secret was submitted.
+- Dependabot alerts and security updates were Off in the supplied product screenshot. Do not equate configured version-update PRs or `npm audit` with enabled GitHub alerts. Review dependency PRs through normal CI; upgrades are not automatic approval.
 - Limit workflow token permissions per job and keep owner calendar credentials read-only. Never broaden PAT scopes to solve a branch-rule problem. No token value, expiry or permissions were inspected in this review.
 
-Update [SECURITY.md](../../SECURITY.md) with verified settings only after observing success. This document is a runbook and dated observation, not proof that settings are active.
+Keep [SECURITY.md](../../SECURITY.md) and its Russian counterpart aligned with observed settings. Product ruleset activation is verified by API; screenshot-only observations are explicitly labeled. A regular documentation PR can verify the protected merge path. A new release and a publisher run after activation are separate checks; this document does not claim those have been exercised.
 
 ## References
 
