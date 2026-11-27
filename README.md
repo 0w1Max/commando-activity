@@ -7,11 +7,11 @@ Your GitHub contribution calendar, brought to life as an animated pixel-art worl
 [![Checks](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml/badge.svg)](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/0w1Max/commando-activity)](https://github.com/0w1Max/commando-activity/releases/latest)
 
-![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.4)
+![Live animation](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.5)
 
 Four rotating locations. A soldier patrols, jumps over obstacles and clears your contribution cells. Generated from your real activity; this is an SVG animation, with no keyboard controls or server to maintain.
 
-**Current version: 2.8.4.** The mobile optimization introduced in 2.8.1 is retained.
+**Current version: 2.8.5.** The mobile optimization introduced in 2.8.1 is retained.
 
 ## Add it to your profile
 

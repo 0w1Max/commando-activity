@@ -25,6 +25,13 @@ for (const item of contract.cases)
       locationOverride: item.location,
       seedOverride: item.seed,
     });
-    assert.equal(createHash('sha256').update(svg).digest('hex'), item.sha256);
+    // v2.8.5 extends the existing background behind the scene to close subpixel seams.
+    const height = Number(svg.match(/viewBox="0 -32 1200 (\d+)"/)[1]);
+    assert.ok(svg.includes(`id="hud-headroom" x="0" y="-32" width="1200" height="${height}"`));
+    const legacy = svg.replace(
+      /(<rect id="hud-headroom"[^>]* height=")\d+("[^>]*>)/,
+      (_, before, after) => before + '32' + after,
+    );
+    assert.equal(createHash('sha256').update(legacy).digest('hex'), item.sha256);
     assert.equal((svg.match(/<(?:animate|animateTransform)\b/g) || []).length, item.animations);
   });
