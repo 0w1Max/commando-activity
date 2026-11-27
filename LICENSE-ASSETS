@@ -1,0 +1,37 @@
+CC0 1.0 Universal — original project artwork
+
+Affirmer: 0w1Max, Commando Activity project owner
+Applied on: 2026-11-27
+
+To the extent that the Affirmer holds copyright and related rights in the
+original Commando Activity artwork, the Affirmer applies CC0 1.0 Universal
+to that artwork under the unmodified legal code in LICENSES/CC0-1.0.txt:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Scope:
+- Original characters, backgrounds, obstacles, platforms, decorations and
+  end-screen artwork created for this project, including the visual designs
+  emitted by the SVG generator.
+- All 19 packed artwork files listed in compliance/artwork-manifest.json,
+  their optimized derivatives, and the seven original PNGs identified by
+  archived-image records in the same manifest, at the recorded hashes.
+- Those original graphical elements when included in generated profile
+  SVGs, previews or screenshots. This does not place an entire screenshot
+  or a user's profile/calendar data under CC0.
+
+The owner declared that the artwork was created from scratch in collaboration
+with the assistant. This dedication covers rights the Affirmer can grant;
+it does not assert exclusive copyright in every AI-assisted element or
+provide an independent legal certification.
+
+Original source code, workflows and documentation remain under the scoped
+MIT grant in LICENSE-CODE. The CC0 dedication for visual designs does not
+change the license of the source code that generates them.
+
+Excluded: third-party trademarks/logos, third-party materials, archived font
+files subject to their existing licenses, user names, personal information
+and GitHub contribution data. No third-party rights are granted or waived.
+
+The applicable CC0 legal code is permanent and irrevocable to the extent
+provided by its terms. The artwork is offered as-is without warranties.
+Attribution to Commando Activity is welcome but is not required by CC0.

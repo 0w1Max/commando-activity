@@ -2,7 +2,7 @@
 
 **English** · [Русский](../ru/MIGRATION.md)
 
-**Follow-up, 27 November 2026:** the owner confirms original creation of all artwork. See the [current artwork record](ARTWORK.md) and [repository settings](REPOSITORY_SECURITY.md); the findings below describe the earlier review state. · 2026-11-24
+**Follow-up, 27 November 2026:** the owner confirms original creation of all artwork; version 2.8.4 applies CC0 1.0 to original artwork. See the [current artwork record](ARTWORK.md) and [repository settings](REPOSITORY_SECURITY.md); the findings below describe the earlier review state. · 2026-11-24
 
 ## Findings
 

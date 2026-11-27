@@ -6,15 +6,57 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
-export function validateArtworkManifest(manifest, { files, read, requireCleared = false }) {
+export function validateArtworkManifest(
+  manifest,
+  { files, read, requireCleared = false, requireLicensed = false },
+) {
   assert.equal(manifest.schemaVersion, 1, 'Unknown artwork inventory schema');
   assert.match(manifest.baselineCommit, /^[a-f0-9]{40}$/);
+  const licensed = (item) => ['verified', 'owner-licensed'].includes(item.rightsStatus);
+  const declaration = manifest.artworkLicense;
+  assert.equal(declaration.spdxId, 'CC0-1.0');
+  for (const [pathKey, hashKey, expected] of [
+    ['scopeFile', 'scopeSha256', 'LICENSE-ASSETS'],
+    ['legalCode', 'legalCodeSha256', 'LICENSES/CC0-1.0.txt'],
+  ]) {
+    assert.equal(declaration[pathKey], expected, 'Unexpected license file');
+    assert.equal(
+      digest(read(expected)),
+      declaration[hashKey],
+      'License text changed without review',
+    );
+  }
+  function checkLicense(item) {
+    assert.ok(typeof item.license === 'string' && item.license.trim(), 'Missing license');
+    assert.ok(typeof item.creator === 'string' && item.creator.trim(), 'Missing creator');
+    assert.ok(item.permissionEvidence?.length, 'Missing permission evidence');
+    for (const url of item.permissionEvidence)
+      assert.match(url, /^https:\/\//, 'Evidence must be a reviewable HTTPS reference');
+    if (item.rightsStatus === 'owner-licensed') {
+      assert.ok(manifest.ownerDeclaration?.id, 'Missing owner declaration');
+      assert.equal(
+        item.originDeclaration,
+        manifest.ownerDeclaration.id,
+        'Missing owner declaration',
+      );
+      assert.ok(manifest.ownerDeclaration.statement, 'Empty owner declaration');
+      assert.equal(manifest.ownerDeclaration.publicArtworkLicense, 'CC0-1.0');
+      assert.equal(item.license, 'CC0-1.0');
+      assert.ok(
+        item.permissionEvidence.includes(
+          'https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS',
+        ),
+        'Missing owner license reference',
+      );
+    }
+  }
   const evidence = new Map();
   for (const item of manifest.evidence) {
     assert.ok(!evidence.has(item.id), 'Duplicate evidence ID');
     assert.match(item.url, /^https:\/\/github\.com\/0w1Max\/0w1Max\/blob\/[a-f0-9]{40}\//);
     assert.match(item.sha256, /^[a-f0-9]{64}$/);
     assert.match(item.gitBlobSha, /^[a-f0-9]{40}$/);
+    if (licensed(item)) checkLicense(item);
     evidence.set(item.id, item);
   }
   const assets = new Map();
@@ -29,14 +71,14 @@ export function validateArtworkManifest(manifest, { files, read, requireCleared 
       .update(bytes)
       .digest('hex');
     assert.equal(blob, item.gitBlobSha, 'Git blob mismatch: ' + item.path);
-    assert.ok(['review-required', 'license-pending', 'verified'].includes(item.rightsStatus));
+    assert.ok(
+      ['review-required', 'license-pending', 'verified', 'owner-licensed'].includes(
+        item.rightsStatus,
+      ),
+    );
     assert.ok(Array.isArray(item.permissionEvidence));
-    if (item.rightsStatus === 'verified') {
-      assert.ok(typeof item.license === 'string' && item.license.trim(), 'Missing license');
-      assert.ok(typeof item.creator === 'string' && item.creator.trim(), 'Missing creator');
-      assert.ok(item.permissionEvidence.length, 'Missing permission evidence');
-      for (const url of item.permissionEvidence)
-        assert.match(url, /^https:\/\//, 'Evidence must be a reviewable HTTPS reference');
+    if (licensed(item)) {
+      checkLicense(item);
     } else {
       if (item.rightsStatus === 'license-pending') {
         assert.equal(
@@ -62,24 +104,23 @@ export function validateArtworkManifest(manifest, { files, read, requireCleared 
     for (const input of item.technicalOrigin.inputs) {
       if (assets.has(input)) {
         const source = assets.get(input);
-        if (item.rightsStatus === 'verified')
-          assert.equal(source.rightsStatus, 'verified', 'Unresolved source artwork');
+        if (licensed(item)) assert.ok(licensed(source), 'Unresolved source artwork');
         visit(input);
       } else {
         assert.ok(evidence.has(input), 'Missing source evidence: ' + input);
-        if (item.rightsStatus === 'verified' && evidence.get(input).kind === 'archived-image')
-          assert.equal(evidence.get(input).rightsStatus, 'verified', 'Unresolved input rights');
+        if (licensed(item) && evidence.get(input).kind === 'archived-image')
+          assert.ok(licensed(evidence.get(input)), 'Unresolved input rights');
       }
     }
     active.delete(path);
     visited.add(path);
   }
   for (const path of assets.keys()) visit(path);
-  if (requireCleared)
+  if (requireCleared || requireLicensed)
     assert.equal(
       unresolved.length,
       0,
-      `${unresolved.length} artwork files still need rights review`,
+      `${unresolved.length} artwork files still need a recorded license`,
     );
   return { total: assets.size, unresolved };
 }
@@ -91,6 +132,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       files: readdirSync('assets').map((name) => 'assets/' + name),
       read: (path) => readFileSync(path),
       requireCleared: process.argv.includes('--require-cleared'),
+      requireLicensed: process.argv.includes('--require-licensed'),
     });
     console.log(`PASS: inventory and hashes match ${result.total} artwork files`);
     if (result.unresolved.length)

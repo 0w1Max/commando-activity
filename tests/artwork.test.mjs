@@ -7,25 +7,30 @@ const context = {
   files: readdirSync('assets').map((name) => 'assets/' + name),
   read: (path) => readFileSync(path),
 };
-test('Inventory covers every packed atlas and distinguishes provenance from rights clearance', () => {
-  const result = validateArtworkManifest(inventory(), context);
+test('All packed atlases have recorded licenses and pass the strict check', () => {
+  const result = validateArtworkManifest(inventory(), { ...context, requireLicensed: true });
   assert.equal(result.total, context.files.length);
-  assert.ok(result.unresolved.length > 0);
-  assert.throws(
-    () => validateArtworkManifest(inventory(), { ...context, requireCleared: true }),
-    /need rights review/,
-  );
+  assert.equal(result.unresolved.length, 0);
+  validateArtworkManifest(inventory(), { ...context, requireCleared: true });
 });
-test('Owner-declared origin does not silently assign a public artwork license', () => {
+test('Owner licensing requires the explicit declaration and unchanged legal files', () => {
   const changed = inventory();
   assert.equal(changed.ownerDeclaration.declaredBy, '0w1Max');
   assert.ok(
     changed.assets.every(
-      (item) => item.rightsStatus === 'license-pending' && item.license === null,
+      (item) => item.rightsStatus === 'owner-licensed' && item.license === 'CC0-1.0',
     ),
   );
   delete changed.ownerDeclaration;
   assert.throws(() => validateArtworkManifest(changed, context), /Missing owner declaration/);
+  assert.throws(
+    () =>
+      validateArtworkManifest(inventory(), {
+        ...context,
+        read: (path) => (path === 'LICENSE-ASSETS' ? Buffer.from('changed') : context.read(path)),
+      }),
+    /License text changed/,
+  );
 });
 test('Untracked, changed or renamed artwork cannot silently pass inventory checks', () => {
   assert.throws(
@@ -38,22 +43,30 @@ test('Untracked, changed or renamed artwork cannot silently pass inventory check
   );
   assert.throws(
     () => validateArtworkManifest(inventory(), { ...context, read: () => Buffer.from('changed') }),
-    /changed without review/,
+    /changed without review|License text changed/,
   );
   const changed = inventory();
   changed.assets[0].path = '../outside';
   assert.throws(() => validateArtworkManifest(changed, context));
 });
-test('Verified labels need evidence and cannot hide an unresolved derivation', () => {
+test('Licensed derivatives cannot hide missing permission or unresolved inputs', () => {
   const changed = inventory();
   const derived = changed.assets.find((item) => item.path.includes('-optimized.'));
-  derived.rightsStatus = 'verified';
+  derived.license = null;
   assert.throws(() => validateArtworkManifest(changed, context), /Missing license/);
-  derived.license = 'CC-BY-4.0';
-  derived.creator = 'Example';
+  derived.license = 'CC0-1.0';
+  derived.permissionEvidence = [];
   assert.throws(() => validateArtworkManifest(changed, context), /Missing permission evidence/);
-  derived.permissionEvidence = ['https://example.com/permission'];
+  derived.permissionEvidence = [
+    'https://github.com/0w1Max/commando-activity/blob/main/LICENSE-ASSETS',
+  ];
+  const source = changed.assets.find((item) => derived.technicalOrigin.inputs.includes(item.path));
+  source.rightsStatus = 'review-required';
+  source.license = null;
   assert.throws(() => validateArtworkManifest(changed, context), /Unresolved source artwork/);
+  const archive = inventory();
+  archive.evidence.find((item) => item.kind === 'archived-image').rightsStatus = 'review-required';
+  assert.throws(() => validateArtworkManifest(archive, context), /Unresolved input rights/);
 });
 test('Ruleset drafts preserve automatic output publication and creation of release tags', () => {
   const read = (name) => JSON.parse(readFileSync('examples/rulesets/' + name + '.json', 'utf8'));

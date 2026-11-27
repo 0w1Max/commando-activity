@@ -6,6 +6,18 @@ Notable user-facing changes. Format: [Keep a Changelog](https://keepachangelog.c
 
 ## [Unreleased]
 
+## [2.8.4] - 2026-11-27
+
+### Added
+
+- Explicit owner dedication of original artwork under CC0 1.0, the standard legal code and scope declaration; code remains MIT.
+- Required license checks for all 19 atlases, upstream sources and permissions, with regression tests for license tampering and unresolved records.
+
+### Changed
+
+- English/Russian documentation and setup assistant explain artwork reuse without mandatory attribution.
+- Graphics, motion and mobile optimization are preserved; exact SVG contracts are unchanged.
+
 ## [2.8.3] - 2026-11-27
 
 ### Added

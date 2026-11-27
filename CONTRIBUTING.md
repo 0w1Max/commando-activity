@@ -10,4 +10,6 @@ Before review: `npm ci`, `npm run check`, `npm run lint`, `npm run format:check`
 
 This is a small function-based generator. Prefer clear domain boundaries over generic frameworks or layers with no job. Explain non-obvious invariants in comments; omit promotional claims and obsolete experiment notes. English and Russian documentation changes should describe the same behavior and link to the corresponding translated page.
 
-Artwork changes must update the [inventory](compliance/artwork-manifest.json) and include source/permission evidence; see the [review procedure](docs/en/ARTWORK.md). Run `npm run check:assets`. A passing integrity check does not clear unresolved rights.
+Artwork changes must update the [inventory](compliance/artwork-manifest.json) and include source/permission evidence; see the [review procedure](docs/en/ARTWORK.md). Run `npm run check:assets:licensed`. A passing integrity check does not clear unresolved rights.
+
+For new original artwork, explicitly agree to CC0 and record its source and permission in the inventory. Third-party material does not automatically become CC0; review and retain its own terms.
