@@ -7,11 +7,11 @@
 [![Проверки](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml/badge.svg)](https://github.com/0w1Max/commando-activity/actions/workflows/ci.yml)
 [![Релиз](https://img.shields.io/github/v/release/0w1Max/commando-activity)](https://github.com/0w1Max/commando-activity/releases/latest)
 
-![Живая анимация](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.4)
+![Живая анимация](https://raw.githubusercontent.com/0w1Max/0w1Max/output/commando-activity.svg?v=2.8.5)
 
 Четыре сменяющие друг друга локации. Боец патрулирует уровень, перепрыгивает препятствия и расстреливает клетки вашего календаря. Это SVG-анимация по реальной активности, без управления клавиатурой и собственного сервера.
 
-**Текущая версия: 2.8.4.** Оптимизация для телефонов из 2.8.1 сохранена.
+**Текущая версия: 2.8.5.** Оптимизация для телефонов из 2.8.1 сохранена.
 
 ## Добавить в профиль
 

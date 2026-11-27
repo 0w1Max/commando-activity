@@ -217,5 +217,6 @@ export function renderSvg({
       jungle: '#0d2630',
       volcano: '#080507',
     }[level.location] ?? '#102b35';
-  return `${header}${defs}<rect id="hud-headroom" x="0" y="${-headerRoom}" width="${WORLD.width}" height="${headerRoom}" fill="${headerFill}"/>${gameBody}</svg>\n`;
+  const backdropHeight = headerRoom + (pixelViewport?.viewHeight ?? WORLD.height);
+  return `${header}${defs}<rect id="hud-headroom" x="0" y="${-headerRoom}" width="${WORLD.width}" height="${backdropHeight}" fill="${headerFill}"/>${gameBody}</svg>\n`;
 }

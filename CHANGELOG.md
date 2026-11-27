@@ -6,6 +6,12 @@ Notable user-facing changes. Format: [Keep a Changelog](https://keepachangelog.c
 
 ## [Unreleased]
 
+## [2.8.5] - 2026-11-27
+
+### Fixed
+
+- Remove the thin dark seam below the username and slash when SVGs are scaled by extending the existing backdrop behind the scene. Text/grid positions, artwork and animation are preserved.
+
 ## [2.8.4] - 2026-11-27
 
 ### Added

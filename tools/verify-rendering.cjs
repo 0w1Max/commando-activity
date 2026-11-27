@@ -43,7 +43,16 @@ const load = (p) =>
         locationOverride: location,
         seedOverride: 5,
       };
-      const svgs = [old.renderSvg(input), now.renderSvg(input)];
+      // Apply only the approved v2.8.5 backdrop extension to the old reference.
+      // Everything else, including every animation frame, must still match v2.8.1.
+      const before = old.renderSvg(input);
+      const height = before.match(/viewBox="0 -32 1200 (\d+)"/)[1];
+      const expected = before.replace(
+        /(<rect id="hud-headroom"[^>]* height=")32("[^>]*>)/,
+        (_, start, end) => start + height + end,
+      );
+      if (expected === before) throw Error('Unexpected reference backdrop');
+      const svgs = [expected, now.renderSvg(input)];
       fs.writeFileSync(out + '/' + location + '-before.svg', svgs[0]);
       fs.writeFileSync(out + '/' + location + '-after.svg', svgs[1]);
       for (const [width, dpr] of [
